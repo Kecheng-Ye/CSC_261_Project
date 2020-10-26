@@ -1,5 +1,22 @@
+-- NOTE! Should load the data with the same sequence as you build the table
+-- or, the foreign key will fail!!
+
 LOAD DATA LOCAL INFILE './Dataset/channels.csv' 
 INTO TABLE Channel 
+FIELDS TERMINATED BY ',' 
+ENCLOSED BY '"'
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS;
+
+LOAD DATA LOCAL INFILE './Dataset/videos.csv' 
+INTO TABLE Video 
+FIELDS TERMINATED BY ',' 
+ENCLOSED BY '"'
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS;
+
+LOAD DATA LOCAL INFILE './Dataset/users.csv' 
+INTO TABLE User 
 FIELDS TERMINATED BY ',' 
 ENCLOSED BY '"'
 LINES TERMINATED BY '\n'
@@ -19,16 +36,3 @@ ENCLOSED BY '"'
 LINES TERMINATED BY '\n'
 IGNORE 1 ROWS;
 
-LOAD DATA LOCAL INFILE './Dataset/users.csv' 
-INTO TABLE User 
-FIELDS TERMINATED BY ',' 
-ENCLOSED BY '"'
-LINES TERMINATED BY '\n'
-IGNORE 1 ROWS;
-
-LOAD DATA LOCAL INFILE './Dataset/videos.csv' 
-INTO TABLE Video 
-FIELDS TERMINATED BY ',' 
-ENCLOSED BY '"'
-LINES TERMINATED BY '\n'
-IGNORE 1 ROWS;
