@@ -1,6 +1,8 @@
 -- NOTE! Should load the data with the same sequence as you build the table
 -- or, the foreign key will fail!!
 
+USE kye_1
+
 LOAD DATA LOCAL INFILE './Dataset/channels.csv' 
 INTO TABLE Channel 
 FIELDS TERMINATED BY ',' 

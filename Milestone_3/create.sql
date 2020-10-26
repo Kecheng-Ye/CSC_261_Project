@@ -20,7 +20,7 @@ create table Video(
     Publish_date	DATE,
     Views			INT	UNSIGNED		DEFAULT 0,
     PRIMARY KEY(id),
-    FOREIGN KEY (Channel_id) REFERENCES Channel(id)
+    FOREIGN KEY (Channel_id)    REFERENCES Channel(id)     ON DELETE CASCADE
 );
 
 create table User(
@@ -36,8 +36,9 @@ create table Subscribe(
     Channel_id		INT UNSIGNED,
     Start_date		DATE,
     PRIMARY KEY(User_name, Channel_id),
-    FOREIGN KEY (User_name) REFERENCES User(name),
-    FOREIGN KEY (Channel_id) REFERENCES Channel(id)
+    FOREIGN KEY (User_name)     REFERENCES User(name)       ON DELETE CASCADE,
+    FOREIGN KEY (Channel_id)    REFERENCES Channel(id)      ON DELETE CASCADE
+                              
 );
 
 create table likes(
@@ -46,7 +47,7 @@ create table likes(
     Comment			VARCHAR(255),
     Repeated_views	INT 			DEFAULT 0,
     PRIMARY KEY(User_name, Video_id),
-    FOREIGN KEY (User_name) REFERENCES User(name),
-    FOREIGN KEY (Video_id) REFERENCES Video(id)
+    FOREIGN KEY (User_name)     REFERENCES User(name)       ON DELETE CASCADE,
+    FOREIGN KEY (Video_id)      REFERENCES Video(id)        ON DELETE CASCADE
 );
 
