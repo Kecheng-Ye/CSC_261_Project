@@ -14,7 +14,7 @@ create table Channel(
 );
 
 create table Video(
-	id				INT UNSIGNED		NOT NULL,
+	id				VARCHAR(255),		NOT NULL,
     Title			VARCHAR(255),
     Channel_id		INT UNSIGNED,
     Publish_date	DATE,
@@ -43,7 +43,7 @@ create table Subscribe(
 
 create table likes(
 	User_name		VARCHAR(255)	NOT NULL,
-    Video_id		INT UNSIGNED	NOT NULL,
+    Video_id		VARCHAR(255),	NOT NULL,
     Comment			VARCHAR(255),
     Repeated_views	INT 			DEFAULT 0,
     PRIMARY KEY(User_name, Video_id),
