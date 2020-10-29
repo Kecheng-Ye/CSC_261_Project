@@ -1,3 +1,7 @@
+<!DOCTYPE html>
+<html>
+<body>
+	
 <?php
 $name=abc123;
 
@@ -6,7 +10,7 @@ $user = "kguo";
 $pwd = "17417174";
 $db = "xmin2_1";
 
-$conn = new mysqli($servername, $username, $password, $db);
+$conn = new mysqli($server, $user, $pwd, $db);
 
 if($conn->connect_error){
 	die("Connection failed ".$conn->connect_error);
@@ -47,3 +51,6 @@ Password: <input type='text' name='Password' value='$password'><br>
 $conn->close();
 
 ?>
+	
+</body>
+</html>
