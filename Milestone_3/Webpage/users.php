@@ -1,6 +1,3 @@
-
-
-
 <!DOCTYPE html>
 <html>
 <body>
@@ -9,14 +6,13 @@
 $server = "localhost";
 $user = "kguo";
 $pwd = "17417174";
-$db = "xmin2_1";
+$db = "kguo_1";
 
-$conn = new mysqli_connect($server, $user, $pwd, $db);
+$conn = new mysqli($server, $user, $pwd, $db);
 
 if($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
 }
-else print "<br>Connection OK!";
 
 $sql_select = "SELECT * FROM User";
 if($res = $conn->query($sql_select)) {
@@ -25,7 +21,7 @@ if($res = $conn->query($sql_select)) {
 	}
 }
 
-mysqli_close($conn)
+mysqli_close($conn);
 ?>
 
 </body>
