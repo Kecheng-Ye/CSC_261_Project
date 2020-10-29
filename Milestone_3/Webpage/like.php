@@ -1,3 +1,4 @@
+<!-- 
 <?php
 $server = "localhost";
 $user = "kguo";
@@ -13,4 +14,14 @@ if($res = $conn->query($sql_select)) {                                          
         	echo "User: " . $row["User_name"] . "    Video ID: " . $row["Video_id"] . "  Comment: " . $row["Comment"] . "	Repeated views: " . $row["Repeated_views"] . "<br>";
 	}
 }
-                                                                                                                        mysqli_close($conn)                                                                                                     ?>
+?> -->
+<!DOCTYPE html>
+<html>
+<body>
+
+<?php
+echo "My first PHP script!";
+?>
+
+</body>
+</html>
