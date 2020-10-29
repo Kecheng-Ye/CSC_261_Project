@@ -22,7 +22,7 @@ $row = $result->fetch_assoc();
 
 $First_name = $row["First_name"];
 $Lastname = $row["Last_name"];
-$Password = $row["Password"];
+$Password = $row["password"];
 
 echo
 
