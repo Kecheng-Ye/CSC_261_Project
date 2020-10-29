@@ -16,7 +16,7 @@ if($conn->connect_error){
 	die("Connection failed ".$conn->connect_error);
 }
 
-$sql = "select * from students where name='$name'";
+$sql = "select * from users where name='$name'";
 
 $result = $conn->query($sql);
 
