@@ -15,7 +15,7 @@
 <p>Click On Menu</p>
 <?php
 $connection = mysql_connect("localhost", "root", "");
-$db = mysql_select_db("company", $connection);
+$db = mysql_select_db("xmin2_1", $connection);
 if (isset($_GET['submit'])) {
 $name = $_GET['name'];
 $First_name = $_GET['First_name'];
