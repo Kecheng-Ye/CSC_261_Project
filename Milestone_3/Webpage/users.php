@@ -6,7 +6,7 @@
 $server = "localhost";
 $user = "kguo";
 $pwd = "17417174";
-$db = "xmin2_1";
+$db = "kguo_1";
 
 $conn = new mysqli($server, $user, $pwd, $db);
 
