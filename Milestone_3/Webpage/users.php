@@ -9,6 +9,7 @@ $conn = new mysqli_connect($server, $user, $pwd, $db);
 if($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
 }
+else print "<br>Connection OK!";
 
 $sql_select = "SELECT * FROM User";
 if($res = $conn->query($sql_select)) {
