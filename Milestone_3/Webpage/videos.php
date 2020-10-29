@@ -1,8 +1,8 @@
 <?php
 $server = "localhost";
 $user = "kguo";
-$pwd = "17417174"
-$db = "kguo_1"
+$pwd = "17417174";
+$db = "kguo_1";
 
 $conn = new mysqli_connect($server, $user, $pwd, $db);
 
