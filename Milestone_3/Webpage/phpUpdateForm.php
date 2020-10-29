@@ -34,6 +34,7 @@ Name: $name<br>
 <input type='hidden' name='name' value='$name'>
 Firstname: <input type='text' name='First_name' value='$First_name'><br>
 Lastname: <input type='text' name='Last_name' value='$Last_name'><br>
+Password: <input type='text' name='Password' value='$password'><br>
 <input type ='submit'>
 </form>
 
