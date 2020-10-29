@@ -1,4 +1,4 @@
-<?php
+<!-- <?php
 $server = "localhost";
 $user = "kguo";
 $pwd = "17417174"
@@ -13,4 +13,15 @@ if($res = $conn->query($sql_select)) {                                          
         	echo "User: " . $row["User_name"] . "    Video ID: " . $row["Video_id"] . "  Comment: " . $row["Comment"] . "	Repeated views: " . $row["Repeated_views"] . "<br>";
 	}
 }
+?> -->
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<?php
+echo "My first PHP script!";
 ?>
+
+</body>
+</html>
