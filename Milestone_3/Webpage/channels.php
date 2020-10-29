@@ -7,7 +7,8 @@ $server = "localhost";
 $user = "kguo";
 $pwd = "17417174";
 $db = "xmin2_1";
-
+	
+print "Testing connection with ".$db;
 $conn = new mysqli_connect($server, $user, $pwd, $db);
 
 if($conn->connect_error) {
