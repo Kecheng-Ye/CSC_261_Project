@@ -16,7 +16,7 @@ if ($conn->connect_error){
 	die("Connection failed: ". $conn->connect_error);
 }
 
-$sql = "update users set First_name='$First_name', Last_name='$Last_name', Password='$Password' where name='$name'";
+$sql = "update users set First_name='$First_name', Last_name='$Last_name', Password='$password' where name='$name'";
 
 if ($conn->query($sql) === TRUE) {
 	echo "Records updated: ".$name."-".$First_name."-".$Last_name."-".$password;
