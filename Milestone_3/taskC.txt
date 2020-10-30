@@ -1,6 +1,7 @@
+To view the implemented function, please visit:
 http://betaweb.csug.rochester.edu/~kguo/main.html
 
 Contribution:
-Kehao Guo: Task C, data population
+Kehao Guo: Task C, data population, data insert interface (Task D)
 Kecheng Ye: Task B
-Xiaojun Min: Task D
+Xiaojun Min: data update interface (Task D)
