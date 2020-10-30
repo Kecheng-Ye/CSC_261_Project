@@ -1,6 +1,3 @@
-<!DOCTYPE html>
-<html>
-<body>
 <?php
 
 $video_id = $_POST['video_id'];
@@ -31,6 +28,3 @@ if ($conn->query($sql) === TRUE) {
 $conn->close();
 
 ?>
-
-</body>
-</html>
