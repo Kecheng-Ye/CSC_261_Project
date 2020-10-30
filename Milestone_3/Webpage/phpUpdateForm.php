@@ -24,8 +24,8 @@ if ($result->num_rows > 0){
 
 $row = $result->fetch_assoc();
 
-$First_name = $row["First_name"];
-$Lastname = $row["Last_name"];
+$First_name = $row["first_name"];
+$Last_name = $row["last_name"];
 $Password = $row["password"];
 
 echo
@@ -38,7 +38,7 @@ Name: $name<br>
 <input type='hidden' name='name' value='$name'>
 Firstname: <input type='text' name='First_name' value='$First_name'><br>
 Lastname: <input type='text' name='Last_name' value='$Last_name'><br>
-Password: <input type='text' name='Password' value='$password'><br>
+Password: <input type='text' name='Password' value='$Password'><br>
 <input type ='submit'>
 </form>
 
