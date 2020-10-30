@@ -17,6 +17,7 @@ echo $video_id."<br>".$title."<br>".$channel_id."<br>".$publish_date."<br>".$vie
 
 <form action="phpInsertVideoForm.php" method="post">
 video_id: <input type="text" name="video_id"><br>
+title: <input type="text" name="title"><br>
 channel_id: <input type="text" name="channel_id"><br>
 publish_date: <input type="text" name="publish_date"><br>
 views: <input type="text" name="views"><br>
