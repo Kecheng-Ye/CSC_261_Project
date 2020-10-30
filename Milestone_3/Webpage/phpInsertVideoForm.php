@@ -20,7 +20,7 @@ if ($conn->connect_error){
 $sql = "insert into videos(video_id,title,channel_id,publish_date,views) values('$video_id','$title','$channel_id','$publish_date','$views')";
 
 if ($conn->query($sql) === TRUE) {
-	echo "ADDED: ".$video_id.", ".$title.", ".$channel_id", ".$publish_date", ".$views";
+	echo "ADDED: ".$video_id.", ".$title.", ".$channel_id", ".$publish_date", ".$views;
 } else {
 	echo "Error: ".$sql."<br>".$conn->error;
 }
