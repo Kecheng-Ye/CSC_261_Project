@@ -21,11 +21,11 @@ echo $id."<br>".$Title."<br>".$Channel_id."<br>".$Publish_date."<br>".$Views."<b
 
 
 <form action="phpInsertVideoForm.php" method="post">
-video_id: <input type="text" name="id"><br>
-title: <input type="text" name="Title"><br>
-channel_id: <input type="text" name="Channel_id"><br>
-publish_date: <input type="text" name="Publish_date"><br>
-views: <input type="text" name="Views"><br>
+Video Id: <input type="text" name="id"><br>
+Title: <input type="text" name="Title"><br>
+Channel Id: <input type="text" name="Channel_id"><br>
+Publish Date: <input type="text" name="Publish_date"><br>
+Views: <input type="text" name="Views"><br>
 
 <input type ="submit">
 </form>
