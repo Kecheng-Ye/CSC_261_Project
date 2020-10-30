@@ -17,7 +17,7 @@ if ($conn->connect_error){
 	die("Connection failed: ". $conn->connect_error);
 }
 
-$sql = "insert into videos(id,Title,channel id,Publish_date,Views) values('$id','$Title','$Channel_ID','$Publish_date','$Views')";
+$sql = "insert into videos(id,Title,Channel_ID,Publish_date,Views) values('$id','$Title','$Channel_ID','$Publish_date','$Views')";
 
 if ($conn->query($sql) === TRUE) {
 	echo "ADDED: ".$id.", ".$Title.", ".$Channel_ID", ".$Publish_date", ".$Views;
