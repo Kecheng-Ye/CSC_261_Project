@@ -4,23 +4,28 @@
 
 
 <?php
+  
+$server = "localhost";
+$user = "kguo";
+$pwd = "17417174";
+$db = "kguo_1";
 
-$video_id = $_POST['video_id'];
-$title = $_POST['title'];
-$channel_id = $_POST['channel_id'];
-$publish_date = $_POST['publish_date'];
-$views = $_POST['views'];
+$id = $_POST['video_id'];
+$Title = $_POST['title'];
+$Channel_id = $_POST['channel id'];
+$Publish_date = $_POST['publish_date'];
+$Views = $_POST['views'];
 
-echo $video_id."<br>".$title."<br>".$channel_id."<br>".$publish_date."<br>".$views."<br>";
+echo $id."<br>".$Title."<br>".$Channel_id."<br>".$Publish_date."<br>".$Views."<br>";
 ?>
 
 
 <form action="phpInsertVideoForm.php" method="post">
-video_id: <input type="text" name="video_id"><br>
-title: <input type="text" name="title"><br>
-channel_id: <input type="text" name="channel_id"><br>
-publish_date: <input type="text" name="publish_date"><br>
-views: <input type="text" name="views"><br>
+video_id: <input type="text" name="id"><br>
+title: <input type="text" name="Title"><br>
+channel_id: <input type="text" name="Channel_id"><br>
+publish_date: <input type="text" name="Publish_date"><br>
+views: <input type="text" name="Views"><br>
 
 <input type ="submit">
 </form>
