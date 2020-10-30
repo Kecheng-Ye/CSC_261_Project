@@ -1,10 +1,10 @@
 <?php
 
-$video_id = $_POST['video_id'];
-$title = $_POST['title'];
-$channel_id = $_POST['channel_id'];
-$publish_date = $_POST['publish_date'];
-$views = $_POST['views'];
+$id= $_POST['id'];
+$Title = $_POST['Title'];
+$Channel_ID = $_POST['Channel id'];
+$Publish_date = $_POST['Publish_date'];
+$Views = $_POST['Views'];
 
 $server = "localhost";
 $user = "kguo";
@@ -17,10 +17,10 @@ if ($conn->connect_error){
 	die("Connection failed: ". $conn->connect_error);
 }
 
-$sql = "insert into videos(video_id,title,channel_id,publish_date,views) values('$video_id','$title','$channel_id','$publish_date','$views')";
+$sql = "insert into videos(video_id,title,channel_id,publish_date,views) values('$id','$Title','$Channel_ID','$Publish_date','$Views')";
 
 if ($conn->query($sql) === TRUE) {
-	echo "ADDED: ".$video_id.", ".$title.", ".$channel_id", ".$publish_date", ".$views;
+	echo "ADDED: ".$id.", ".$Title.", ".$Channel_ID", ".$Publish_date", ".$Views;
 } else {
 	echo "Error: ".$sql."<br>".$conn->error;
 }
