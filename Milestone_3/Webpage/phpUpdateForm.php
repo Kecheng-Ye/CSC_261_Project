@@ -24,8 +24,8 @@ if ($result->num_rows > 0){
 
 $row = $result->fetch_assoc();
 
-$First_name = $row["first_name"];
-$Last_name = $row["last_name"];
+$First_name = $row["First_name"];
+$Last_name = $row["Last_name"];
 $Password = $row["password"];
 
 echo
