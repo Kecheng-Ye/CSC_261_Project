@@ -33,6 +33,7 @@ $conn->close();
 
 <html>
 <body>
+<br>
 <a href="./main.html">Return to main</a><br>	
 </body>
 </html>
