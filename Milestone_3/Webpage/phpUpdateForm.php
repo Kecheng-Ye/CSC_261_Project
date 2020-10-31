@@ -3,7 +3,7 @@
 <body>
 	
 <?php
-$name="abc123";
+$name= $_POST["name"];
 
 $server = "localhost";
 $user = "kguo";
