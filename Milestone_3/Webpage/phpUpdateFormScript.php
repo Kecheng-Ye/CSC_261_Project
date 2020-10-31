@@ -27,3 +27,12 @@ if ($conn->query($sql) === TRUE) {
 $conn->close();
 
 ?>
+
+
+<!DOCTYPE html>
+
+<html>
+<body>
+<a href="./main.html">Return to main</a><br>	
+</body>
+</html>
