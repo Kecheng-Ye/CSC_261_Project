@@ -27,3 +27,12 @@ if(mysqli_query($conn, $insert)) {
 
 mysqli_close($conn);
 ?>
+
+<!DOCTYPE html>
+
+<html>
+<body>
+<br>
+<a href="./main.html">Return to main</a><br>	
+</body>
+</html>
