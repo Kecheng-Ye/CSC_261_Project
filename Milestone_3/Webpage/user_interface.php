@@ -174,7 +174,8 @@ function like_info($usr_name, $table){
         $row = $res->fetch_assoc();
         while($element = current($row)) {
           $id = key($row);
-          $video_query = "SELECT * FROM Video WHERE id = " . "\"" . $row[$id] . "\"";
+//           $video_query = "SELECT * FROM Video WHERE id = " . "\"" . $row[$id] . "\"";
+	$video_query = "SELECT * FROM Video WHERE id = \"$id\"";
           $query = $conn->query($video_query);
           $result = $query->fetch_assoc();
           echo key($result).":\t" . $result[key($result)] . "<br></br>";
