@@ -109,7 +109,7 @@ h2 {
     if($conn->connect_error) {
       die("Connection failed: " . $conn->connect_error);
     } 
-    if($is_login) {
+//     if($is_login) {
 //       $sql_select = "SELECT * FROM $table WHERE $name_KV[$table] = \"$usr_name\"";
       $sql_select = "SELECT Video_id FROM likes WHERE name = \"$usr_name\"";
       if($res = $conn->query($sql_select)) {
@@ -139,7 +139,7 @@ h2 {
         }
       }
     }
-  }
+//   }
 	
 	
 
@@ -217,7 +217,7 @@ h2 {
     if($conn->connect_error) {
       die("Connection failed: " . $conn->connect_error);
     }
-    if($is_login) {
+//     if($is_login) {
       $sql_select = "SELECT * FROM $table WHERE $name_KV[$table] = \"$usr_name\"";
       if($res = $conn->query($sql_select)) {
         while($row = $res->fetch_assoc()) {
@@ -242,7 +242,7 @@ h2 {
         }
       }
     }
-  }
+//   }
 // function subscribe_info($usr_name, $table){
 //     global $name, $name_KV, $conn, $is_login;
 
