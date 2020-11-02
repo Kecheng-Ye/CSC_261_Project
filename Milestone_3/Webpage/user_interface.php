@@ -123,7 +123,8 @@ h2 {
               # the function will do a second query to search for the Video title of that video id 
               # and print out it
               $id = key($row);
-              $video_query = "SELECT Title FROM Video WHERE id = " . "\"" . $row[$id] . "\"";
+//               $video_query = "SELECT Title FROM Video WHERE id = " . "\"" . $row[$id] . "\"";
+	      $video_query = "SELECT Title FROM likes WHERE name = " . "\"" . $row["Video_id"] . "\"";
               $query = $conn->query($video_query);
               $result = $query->fetch_assoc();
               echo key($result).":\t" . $result[key($result)] . "<br></br>";
