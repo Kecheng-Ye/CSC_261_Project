@@ -142,33 +142,52 @@ h2 {
 //   }
 	
 	
-   function like_info($usr_name, $table){
-    global $name, $conn, $name_KV, $is_login;
+//    function like_info($usr_name, $table){
+//     global $name, $conn, $name_KV, $is_login;
+
+//     if($conn->connect_error) {
+//       die("Connection failed: " . $conn->connect_error);
+//     } 
+//     if($is_login) {
+//       $sql_select = "SELECT Video_id FROM likes WHERE name = \"$usr_name\"";
+//       if($res = $conn->query($sql_select)) {
+//        $row = $res->fetch_assoc();
+//           while($element = current($row)) {
+//               if (key($row) == "Video_id"){ 
+//               $id = key($row);
+//               $video_query = "SELECT * FROM Video WHERE id = " . "\"" . $row[$id] . "\"";
+//               $query = $conn->query($video_query);
+//               $result = $query->fetch_assoc();
+//               echo key($result).":\t" . $result[key($result)] . "<br></br>";
+//             }else{
+//               echo key($row).":\t" . $row[key($row)] . "<br></br>";
+//             }
+            
+//             next($row);
+//           }        
+//       }
+//     }
+//   }
+  function like_info($usr_name, $table){
+    global $name, $name_KV, $conn, $is_login;
 
     if($conn->connect_error) {
       die("Connection failed: " . $conn->connect_error);
-    } 
-    if($is_login) {
+    }else{
       $sql_select = "SELECT Video_id FROM likes WHERE name = \"$usr_name\"";
       if($res = $conn->query($sql_select)) {
-       $row = $res->fetch_assoc();
-          while($element = current($row)) {
-              if (key($row) == "Video_id"){ 
-              $id = key($row);
-              $video_query = "SELECT * FROM Video WHERE id = " . "\"" . $row[$id] . "\"";
-              $query = $conn->query($video_query);
-              $result = $query->fetch_assoc();
-              echo key($result).":\t" . $result[key($result)] . "<br></br>";
-            }else{
-              echo key($row).":\t" . $row[key($row)] . "<br></br>";
-            }
-            
-            next($row);
-          }        
+        $row = $res->fetch_assoc();
+        while($element = current($row)) {
+    if(key($row) != $name_KV[$table]){
+      echo key($row).":\t" . $row[key($row)] . "<br></br>";
+    }else{
+    }
+    
+    next($row);
+        }
       }
     }
   }
-
 
 
   /* This function will do a trivial query of subscribe table and print all User subscribe 
