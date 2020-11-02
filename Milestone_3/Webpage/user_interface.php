@@ -157,7 +157,27 @@ h2 {
 //       echo key($row).":\t" . $row[key($row)] . "<br></br>";
 // 	}
 // }
-	  function like_info($usr_name, $table){
+// function like_info($usr_name, $table){
+//     global $name, $name_KV, $conn, $is_login;
+
+//     if($conn->connect_error) {
+//       die("Connection failed: " . $conn->connect_error);
+//     }else{
+//       $sql_select = "SELECT Video_id FROM likes WHERE User_name = \"$usr_name\"";
+//       if($res = $conn->query($sql_select)) {
+//         $row = $res->fetch_assoc();
+//         while($row = $result->fetch_assoc()) {
+//           $id = key($row);
+//           $video_query = "SELECT Title FROM Video WHERE id = \"$id\"";
+//           $query = $conn->query($video_query);
+//           $result = $query->fetch_assoc();
+//          echo key($result).":\t" . $result[key($result)] . "<br></br>";
+//         }
+//       }
+//     }
+//   }
+	
+  function like_info($usr_name, $table){
     global $name, $name_KV, $conn, $is_login;
 
     if($conn->connect_error) {
@@ -166,12 +186,13 @@ h2 {
       $sql_select = "SELECT Video_id FROM likes WHERE User_name = \"$usr_name\"";
       if($res = $conn->query($sql_select)) {
         $row = $res->fetch_assoc();
-        while($row = $result->fetch_assoc()) {
-          $id = key($row);
-          $video_query = "SELECT Title FROM Video WHERE id = \"$id\"";
-          $query = $conn->query($video_query);
-          $result = $query->fetch_assoc();
-         echo key($result).":\t" . $result[key($result)] . "<br></br>";
+        while($element = current($row)) {
+    if(key($row) != $name_KV[$table]){
+      echo key($row).":\t" . $row[key($row)] . "<br></br>";
+    }else{
+    }
+    
+    next($row);
         }
       }
     }
