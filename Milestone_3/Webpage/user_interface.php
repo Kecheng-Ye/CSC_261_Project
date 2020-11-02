@@ -226,7 +226,7 @@ h2 {
             if(key($row) == $name_KV[$table]){
             }else if (key($row) == "Channel_id"){
               $id = key($row);
-              $channel_query = "SELECT Title FROM Channel WHERE id = "  . $row[$id];
+              $channel_query = "SELECT * FROM Channel WHERE id = "  . $row[$id];
               $query = $conn->query($channel_query);
               $result = $query->fetch_assoc();
               echo key($result).":\t" . $result[key($result)] . "<br></br>";
