@@ -174,7 +174,7 @@ h2 {
     if($conn->connect_error) {
       die("Connection failed: " . $conn->connect_error);
     }else{
-      $sql_select = "SELECT Video_id FROM likes WHERE name = \"$usr_name\"";
+      $sql_select = "SELECT Video_id FROM likes WHERE User_name = \"$usr_name\"";
       if($res = $conn->query($sql_select)) {
         $row = $res->fetch_assoc();
         while($element = current($row)) {
