@@ -188,7 +188,11 @@ h2 {
         $row = $res->fetch_assoc();
         while($element = current($row)) {
     if(key($row) != $name_KV[$table]){
-      echo key($row).":\t" . $row[key($row)] . "<br></br>";
+	  $id = $row[key($row)];
+          $video_query = "SELECT Title FROM Video WHERE id = \"$id\"";
+          $query = $conn->query($video_query);
+          $result = $query->fetch_assoc();
+         echo key($result).":\t" . $result[key($result)] . "<br></br>";
     }else{
     }
     
