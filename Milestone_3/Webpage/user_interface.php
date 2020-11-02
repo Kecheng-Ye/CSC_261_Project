@@ -168,10 +168,10 @@ h2 {
         $row = $res->fetch_assoc();
         while($row = $result->fetch_assoc()) {
           $id = key($row);
-          $video_query = "SELECT * FROM Video WHERE id = \"$id\"";
+          $video_query = "SELECT Title FROM Video WHERE id = \"$id\"";
           $query = $conn->query($video_query);
           $result = $query->fetch_assoc();
-          echo "Title".":\t" . $result["Title"] . "<br></br>";
+         echo key($result).":\t" . $result[key($result)] . "<br></br>";
         }
       }
     }
