@@ -192,7 +192,9 @@ h2 {
           $video_query = "SELECT * FROM Video WHERE id = \"$id\"";
           $query = $conn->query($video_query);
           $result = $query->fetch_assoc();
-         echo key($result).":\t" . $result[key($result)] . "<br></br>";
+	  while($result) {
+		  echo key($result).":\t" . $result[key($result)] . "<br></br>";
+	  }
     }else{
     }
     
