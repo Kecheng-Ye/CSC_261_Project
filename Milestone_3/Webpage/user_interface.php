@@ -110,7 +110,8 @@ h2 {
       die("Connection failed: " . $conn->connect_error);
     } 
     if($is_login) {
-      $sql_select = "SELECT * FROM $table WHERE $name_KV[$table] = \"$usr_name\"";
+//       $sql_select = "SELECT * FROM $table WHERE $name_KV[$table] = \"$usr_name\"";
+      $sql_select = "SELECT Video_id FROM likes WHERE name = \"$usr_name\"";
       if($res = $conn->query($sql_select)) {
         # one user may like a lot of videos
         while($row = $res->fetch_assoc()) {
@@ -124,7 +125,7 @@ h2 {
               # and print out it
               $id = key($row);
 //               $video_query = "SELECT Title FROM Video WHERE id = " . "\"" . $row[$id] . "\"";
-	      $video_query = "SELECT Title FROM likes WHERE name = " . "\"" . $row["Video_id"] . "\"";
+	      $video_query = "SELECT * FROM Video WHERE id = " . "\"" . $row[$id] . "\"";
               $query = $conn->query($video_query);
               $result = $query->fetch_assoc();
               echo key($result).":\t" . $result[key($result)] . "<br></br>";
