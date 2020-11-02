@@ -45,12 +45,16 @@ h2 {
   padding: 1rem;
 }
 </style>
+
 <?php
-  $name = "abc123";
+  
+  $name = $_POST['id'];
+  $upwd =  $_POST['pwd'];
   $server = "localhost";
   $user = "kguo";
   $pwd = "17417174";
   $db = "kguo_1";
+  $is_login = False; // login successful?
   
   $conn = new mysqli($server, $user, $pwd, $db);
   # the hashmap like structure for projecting different attribute name of 'user_name' in different table
@@ -64,27 +68,32 @@ h2 {
   /* This function will do a trivial query of User table and print all User information
     Args:  usr_name(string): the user name used to do query
            table(string): the table we are doing query                     */
-  function person_info($usr_name, $table){
+  function person_info($usr_name, $user_pwd, $table){
     /* Note: Have to use global key word to use the variable outside the function scope */
-    global $name_KV, $conn;
+    global $name, $name_KV, $conn, $is_login;
 
     if($conn->connect_error) {
       die("Connection failed: " . $conn->connect_error);
     }else{
-      $sql_select = "SELECT * FROM User WHERE name = \"$usr_name\"";
-      $res = $conn->query($sql_select);
-      # since one user_name only cooresponds to one row in the table
-      $row = $res->fetch_assoc();
-      # do a iterative search on all the output of the query
-      while($element = current($row)) {
-        # if the attribute is user_name, we will omit it
-        # otherwise we will print the information
-        if(key($row) != $name_KV[$table]){
-          echo key($row).":\t" . $row[key($row)] . "<br></br>";
-        }else{
-        }
-        
-        next($row);
+      $sql_select = "SELECT * FROM User WHERE name = \"$usr_name\" AND password = \"$user_pwd\"";
+      if($res = $conn->query($sql_select)) {
+              # since one user_name only cooresponds to one row in the table
+	      $row = $res->fetch_assoc();
+              # check login status
+              if($row["name"] === $name) {
+		$is_login = True;
+              }
+	      # do a iterative search on all the output of the query
+	      while($element = current($row)) {
+                # if the attribute is user_name, we will omit it
+		# otherwise we will print the information
+		if(key($row) != $name_KV[$table]){
+		  echo key($row).":\t" . $row[key($row)] . "<br></br>";
+		}else{
+		}
+		
+		next($row);
+	      }
       }
     }
   }
@@ -95,11 +104,12 @@ h2 {
     Args:  usr_name(string): the user name used to do query
            table(string): the table we are doing query                     */
   function like_info($usr_name, $table){
-    global $name, $conn, $name_KV;
+    global $name, $conn, $name_KV, $is_login;
 
     if($conn->connect_error) {
       die("Connection failed: " . $conn->connect_error);
-    }else{
+    } 
+    if($is_login) {
       $sql_select = "SELECT * FROM $table WHERE $name_KV[$table] = \"$usr_name\"";
       if($res = $conn->query($sql_select)) {
         # one user may like a lot of videos
@@ -135,12 +145,13 @@ h2 {
   Args:  usr_name(string): the user name used to do query
           table(string): the table we are doing query                     */
   function subscribe_info($usr_name, $table){
-    global $name, $conn, $name_KV;
+    global $name, $conn, $name_KV, $is_login;
 
     # it is pretty similiar to function 'like_info()'
     if($conn->connect_error) {
       die("Connection failed: " . $conn->connect_error);
-    }else{
+    }
+    if($is_login) {
       $sql_select = "SELECT * FROM $table WHERE $name_KV[$table] = \"$usr_name\"";
       if($res = $conn->query($sql_select)) {
         while($row = $res->fetch_assoc()) {
@@ -178,7 +189,7 @@ h2 {
   <div class="left-half">
       <h2>Personal Infomation</h2>
       <!-- call the predefined function to echo stuff -->
-      <?php person_info($name, "User");?>
+      <?php person_info($name, $upwd, "User");?>
       <!-- directly parse the name argument to the update interface for update-->
       <form action="phpUpdateForm.php" method="post">
         <input type ="hidden", name="name", value= <?php echo $name?>>
