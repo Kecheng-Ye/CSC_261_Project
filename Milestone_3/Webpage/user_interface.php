@@ -177,21 +177,7 @@ h2 {
     }
   }
 
-mysqli_close($conn);
-?>
 
-
-</body>
-</html>
-
-    }else{
-    }
-    
-    next($row);
-        }
-      }
-    }
-  }
 
 
   /* This function will do a trivial query of subscribe table and print all User subscribe 
