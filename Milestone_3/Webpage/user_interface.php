@@ -193,7 +193,8 @@ h2 {
           $query = $conn->query($video_query);
           $result = $query->fetch_assoc();
 	  while($result) {
-		  echo key($result).":\t" . $result[key($result)] . "<br></br>";
+		  if(key($result) != $id){
+		    echo key($result).":\t" . $result[key($result)] . "<br></br>";}
 	  }
     }else{
     }
