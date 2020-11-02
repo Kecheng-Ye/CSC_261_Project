@@ -154,7 +154,18 @@ h2 {
         $row = $res->fetch_assoc();
         while($element = current($row)) {
     if(key($row) != $name_KV[$table]){
-      echo key($row).":\t" . $row[key($row)] . "<br></br>";
+//       echo key($row).":\t" . $row[key($row)] . "<br></br>";
+	 echo "Video ID: " . $row["id"] . "    Title: " . $row["Title"] . "  Channel_ID: " . $row["Channel_id"] . "    Publish date: " . $row["Publish_date"] . "        Views: " . $row["Views"] . "<br>";
+	}
+}
+
+mysqli_close($conn);
+?>
+
+
+</body>
+</html>
+
     }else{
     }
     
