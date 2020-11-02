@@ -163,7 +163,7 @@ h2 {
 //       }
 //     }
 //   }
-function like_info($usr_name, $table){
+  function like_info($usr_name, $table){
     global $name, $name_KV, $conn, $is_login;
 
     if($conn->connect_error) {
@@ -172,19 +172,17 @@ function like_info($usr_name, $table){
       $sql_select = "SELECT Video_id FROM likes WHERE User_name = \"$usr_name\"";
       if($res = $conn->query($sql_select)) {
         $row = $res->fetch_assoc();
-        while($element = current($row)) {
+        while($row = $result->fetch_assoc()) {
           $id = key($row);
-//           $video_query = "SELECT * FROM Video WHERE id = " . "\"" . $row[$id] . "\"";
-	$video_query = "SELECT * FROM Video WHERE id = \"$id\"";
+          $video_query = "SELECT * FROM Video WHERE id = \"$id\"";
           $query = $conn->query($video_query);
           $result = $query->fetch_assoc();
-          echo key($result).":\t" . $result[key($result)] . "<br></br>";
+          echo "Title".":\t" . $result["Title"] . "<br></br>";
           next($row);
         }
       }
     }
   }
-
 
   /* This function will do a trivial query of subscribe table and print all User subscribe 
     information
