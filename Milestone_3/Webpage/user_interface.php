@@ -103,43 +103,43 @@ h2 {
      Video information
     Args:  usr_name(string): the user name used to do query
            table(string): the table we are doing query                     */
-//   function like_info($usr_name, $table){
-//     global $name, $conn, $name_KV, $is_login;
+  function like_info($usr_name, $table){
+    global $name, $conn, $name_KV, $is_login;
 
-//     if($conn->connect_error) {
-//       die("Connection failed: " . $conn->connect_error);
-//     } 
-//     if($is_login) {
-// //       $sql_select = "SELECT * FROM $table WHERE $name_KV[$table] = \"$usr_name\"";
-//       $sql_select = "SELECT Video_id FROM likes WHERE name = \"$usr_name\"";
-//       if($res = $conn->query($sql_select)) {
-//         # one user may like a lot of videos
-//         while($row = $res->fetch_assoc()) {
-//           $count = 1;
-//           echo $count. ".\t";
-//           while($element = current($row)) {
-//             if(key($row) == $name_KV[$table]){
-//             }else if (key($row) == "Video_id"){ 
-//               # since print out the video id will not be user friendly
-//               # the function will do a second query to search for the Video title of that video id 
-//               # and print out it
-//               $id = key($row);
-// //               $video_query = "SELECT Title FROM Video WHERE id = " . "\"" . $row[$id] . "\"";
-// 	      $video_query = "SELECT * FROM Video WHERE id = " . "\"" . $row[$id] . "\"";
-//               $query = $conn->query($video_query);
-//               $result = $query->fetch_assoc();
-//               echo key($result).":\t" . $result[key($result)] . "<br></br>";
-//             }else{
-//               echo key($row).":\t" . $row[key($row)] . "<br></br>";
-//             }
+    if($conn->connect_error) {
+      die("Connection failed: " . $conn->connect_error);
+    } 
+    if($is_login) {
+//       $sql_select = "SELECT * FROM $table WHERE $name_KV[$table] = \"$usr_name\"";
+      $sql_select = "SELECT Video_id FROM likes WHERE name = \"$usr_name\"";
+      if($res = $conn->query($sql_select)) {
+        # one user may like a lot of videos
+        while($row = $res->fetch_assoc()) {
+          $count = 1;
+          echo $count. ".\t";
+          while($element = current($row)) {
+            if(key($row) == $name_KV[$table]){
+            }else if (key($row) == "Video_id"){ 
+              # since print out the video id will not be user friendly
+              # the function will do a second query to search for the Video title of that video id 
+              # and print out it
+              $id = key($row);
+//               $video_query = "SELECT Title FROM Video WHERE id = " . "\"" . $row[$id] . "\"";
+	      $video_query = "SELECT * FROM Video WHERE id = " . "\"" . $row[$id] . "\"";
+              $query = $conn->query($video_query);
+              $result = $query->fetch_assoc();
+              echo key($result).":\t" . $result[key($result)] . "<br></br>";
+            }else{
+              echo key($row).":\t" . $row[key($row)] . "<br></br>";
+            }
             
-//             next($row);
-//           }
-//           $count += 1;
-//         }
-//       }
-//     }
-//   }
+            next($row);
+          }
+          $count += 1;
+        }
+      }
+    }
+  }
 	
 	
 
@@ -177,31 +177,31 @@ h2 {
 //     }
 //   }
 	
-  function like_info($usr_name, $table){
-    global $name, $name_KV, $conn, $is_login;
+//   function like_info($usr_name, $table){
+//     global $name, $name_KV, $conn, $is_login;
 
-    if($conn->connect_error) {
-      die("Connection failed: " . $conn->connect_error);
-    }else{
-      $sql_select = "SELECT Video_id FROM likes WHERE User_name = \"$usr_name\"";
-      if($res = $conn->query($sql_select)) {
-        $row = $res->fetch_assoc();
-        while($element = current($row)) {
-    if(key($row) != $name_KV[$table]){
-	  $id = $row[key($row)];
-          $video_query = "SELECT Title FROM Video WHERE id = \"$id\"";
-          $query = $conn->query($video_query);
-          $result = $query->fetch_assoc();
-	echo key($result).":\t" . $result[key($result)] . "<br></br>";
+//     if($conn->connect_error) {
+//       die("Connection failed: " . $conn->connect_error);
+//     }else{
+//       $sql_select = "SELECT Video_id FROM likes WHERE User_name = \"$usr_name\"";
+//       if($res = $conn->query($sql_select)) {
+//         $row = $res->fetch_assoc();
+//         while($element = current($row)) {
+//     if(key($row) != $name_KV[$table]){
+// 	  $id = $row[key($row)];
+//           $video_query = "SELECT Title FROM Video WHERE id = \"$id\"";
+//           $query = $conn->query($video_query);
+//           $result = $query->fetch_assoc();
+// 	echo key($result).":\t" . $result[key($result)] . "<br></br>";
 	  
-    }else{
-    }
+//     }else{
+//     }
     
-    next($row);
-        }
-      }
-    }
-  }
+//     next($row);
+//         }
+//       }
+//     }
+//   }
 
 
 
@@ -210,64 +210,64 @@ h2 {
     information
   Args:  usr_name(string): the user name used to do query
           table(string): the table we are doing query                     */
-//   function subscribe_info($usr_name, $table){
-//     global $name, $conn, $name_KV, $is_login;
+  function subscribe_info($usr_name, $table){
+    global $name, $conn, $name_KV, $is_login;
 
-//     # it is pretty similiar to function 'like_info()'
-//     if($conn->connect_error) {
-//       die("Connection failed: " . $conn->connect_error);
-//     }
-//     if($is_login) {
-//       $sql_select = "SELECT * FROM $table WHERE $name_KV[$table] = \"$usr_name\"";
-//       if($res = $conn->query($sql_select)) {
-//         while($row = $res->fetch_assoc()) {
-//           $count = 1;
-//           echo $count. ".\t";
-//           while($element = current($row)) {
-//             if(key($row) == $name_KV[$table]){
-//             }else if (key($row) == "Channel_id"){
-//               $id = key($row);
-//               $channel_query = "SELECT * FROM Channel WHERE id = "  . $row[$id];
-//               $query = $conn->query($channel_query);
-//               $result = $query->fetch_assoc();
-//               echo key($result).":\t" . $result[key($result)] . "<br></br>";
-//             }else{
-//               echo key($row).":\t" . $row[key($row)] . "<br></br>";
-//             }
-            
-//             next($row);
-//           }
-//           $count += 1;
-
-//         }
-//       }
-//     }
-//   }
-function subscribe_info($usr_name, $table){
-    global $name, $name_KV, $conn, $is_login;
-
+    # it is pretty similiar to function 'like_info()'
     if($conn->connect_error) {
       die("Connection failed: " . $conn->connect_error);
-    }else{
-      $sql_select = "SELECT Channel_id FROM Subscribe WHERE User_name = \"$usr_name\"";
-      if($res = $conn->query($sql_select)) {
-        $row = $res->fetch_assoc();
-        while($element = current($row)) {
-    if(key($row) != $name_KV[$table]){
-    $id = $row[key($row)];
-          $channel_query = "SELECT Title FROM Channel WHERE id = \"$id\"";
-          $query = $conn->query($channel_query);
-          $result = $query->fetch_assoc();
-  echo key($result).":\t" . $result[key($result)] . "<br></br>";
-    
-    }else{
     }
-    
-    next($row);
+    if($is_login) {
+      $sql_select = "SELECT * FROM $table WHERE $name_KV[$table] = \"$usr_name\"";
+      if($res = $conn->query($sql_select)) {
+        while($row = $res->fetch_assoc()) {
+          $count = 1;
+          echo $count. ".\t";
+          while($element = current($row)) {
+            if(key($row) == $name_KV[$table]){
+            }else if (key($row) == "Channel_id"){
+              $id = key($row);
+              $channel_query = "SELECT * FROM Channel WHERE id = "  . $row[$id];
+              $query = $conn->query($channel_query);
+              $result = $query->fetch_assoc();
+              echo key($result).":\t" . $result[key($result)] . "<br></br>";
+            }else{
+              echo key($row).":\t" . $row[key($row)] . "<br></br>";
+            }
+            
+            next($row);
+          }
+          $count += 1;
+
         }
       }
     }
   }
+// function subscribe_info($usr_name, $table){
+//     global $name, $name_KV, $conn, $is_login;
+
+//     if($conn->connect_error) {
+//       die("Connection failed: " . $conn->connect_error);
+//     }else{
+//       $sql_select = "SELECT Channel_id FROM Subscribe WHERE User_name = \"$usr_name\"";
+//       if($res = $conn->query($sql_select)) {
+//         $row = $res->fetch_assoc();
+//         while($element = current($row)) {
+//     if(key($row) != $name_KV[$table]){
+//     $id = $row[key($row)];
+//           $channel_query = "SELECT Title FROM Channel WHERE id = \"$id\"";
+//           $query = $conn->query($channel_query);
+//           $result = $query->fetch_assoc();
+//   echo key($result).":\t" . $result[key($result)] . "<br></br>";
+    
+//     }else{
+//     }
+    
+//     next($row);
+//         }
+//       }
+//     }
+//   }
 
 
 ?>
