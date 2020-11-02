@@ -142,7 +142,7 @@ h2 {
 //   }
 	
 	
-function like_info($usr_name, $table){
+   function like_info($usr_name, $table){
     global $name, $conn, $name_KV, $is_login;
 
     if($conn->connect_error) {
@@ -151,16 +151,11 @@ function like_info($usr_name, $table){
     if($is_login) {
       $sql_select = "SELECT Video_id FROM likes WHERE name = \"$usr_name\"";
       if($res = $conn->query($sql_select)) {
-        # one user may like a lot of videos
-        while($row = $res->fetch_assoc()) {
+       $row = $res->fetch_assoc();
           while($element = current($row)) {
-            if (key($row) == "Video_id"){ 
-              # since print out the video id will not be user friendly
-              # the function will do a second query to search for the Video title of that video id 
-              # and print out it
+              if (key($row) == "Video_id"){ 
               $id = key($row);
-
-	      $video_query = "SELECT * FROM Video WHERE id = " . "\"" . $row[$id] . "\"";
+              $video_query = "SELECT * FROM Video WHERE id = " . "\"" . $row[$id] . "\"";
               $query = $conn->query($video_query);
               $result = $query->fetch_assoc();
               echo key($result).":\t" . $result[key($result)] . "<br></br>";
@@ -169,8 +164,7 @@ function like_info($usr_name, $table){
             }
             
             next($row);
-          }
-        }
+          }        
       }
     }
   }
