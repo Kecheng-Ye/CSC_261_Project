@@ -22,7 +22,7 @@ if ($_POST) {
 
 <!-- go to interface -->
 <?php if ($login_success): ?>
-    <form action="User_Demo.php" id="goto_Demo" method="post">
+    <form action="user_interface.php" id="goto_Demo" method="post">
         <input type ="hidden", name="name", value= <?php echo $id?>>
     </form>
 
@@ -31,5 +31,5 @@ if ($_POST) {
     </script>
 <?php else: ?>
     <p>Wrong Username or Passwoard</p><br>
-    <a href="./user_login.php">go back to login page</a><br>
+    <a href="./user_login.html">go back to login page</a><br>
 <?php endif; ?>

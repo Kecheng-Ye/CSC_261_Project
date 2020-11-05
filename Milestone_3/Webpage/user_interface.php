@@ -121,6 +121,7 @@ function like_info($usr_name, $table){
 					echo key($result).":\t" . $result[key($result)] . "<br></br>";
 				}else{
 					echo key($row).":\t" . $row[key($row)] . "<br></br>";
+					# TODO
 				}
 				
 				next($row);
