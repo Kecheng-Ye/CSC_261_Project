@@ -1,3 +1,10 @@
+user login form:
+user_login.html
+
+user update form:
+updateUser.html
+
+Usage information: 
 In the main.html, please click on "User Login" and use the correct username and password (you can find in "Users") to login.
 If your password or username is incorrect, you will be asked to go back to the login page.
 When you login successfully, you will see your personal information on the left and your liked videos/ subscribed channels on the right. 
