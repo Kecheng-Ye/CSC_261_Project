@@ -1,0 +1,8 @@
+FC:
+video_id->{title,channel_id,publish_date,views}
+channel_id->{title,release_date}
+username->{first_name,last_name,password}
+{username,video_id}->comment,repeated_views
+{username,channel_id}->{start_date}
+
+Since whenever X->Y, x is the superkey of this relation, all the relations are BCNF
