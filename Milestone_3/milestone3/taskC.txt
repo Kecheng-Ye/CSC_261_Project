@@ -1,0 +1,8 @@
+To view content of each relation, please visit:
+http://betaweb.csug.rochester.edu/~kguo/main.html
+And click the link of the relation you want to view.
+
+Contribution:
+Kehao Guo: Task C, login interface
+Kecheng Ye: Task B, user interface, login interface
+Xiaojun Min: Task A, user update interface
