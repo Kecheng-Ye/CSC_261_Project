@@ -20,9 +20,11 @@ if($conn->connect_error){
 	die("Connection failed ".$conn->connect_error);
 }
 
-$sql = 'INSERT INTO User '.
-      '(name, First_name, Last_name, password) '.
-      'VALUES ( '$name','$First_name','$Last_name', $Password )';
+// $sql = 'INSERT INTO User '.
+//       '(name, First_name, Last_name, password) '.
+//       'VALUES ( '$name','$First_name','$Last_name', $Password )';
+
+$sql = "INSERT INTO User ". "(name, First_name, Last_name, password) ". "VALUES ( '$name','$First_name','$Last_name', $Password )";
 
 
 if ($conn->query($sql) === TRUE) {
