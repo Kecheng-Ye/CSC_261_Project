@@ -18,12 +18,13 @@ if($conn->connect_error){
 
 $sql = 'INSERT INTO User '.
       '(name, First_name, Last_name, password) '.
-      'VALUES ( "dj", "John", "Doe", 12345 )';
+      'VALUES ( '$name','$First_name','$Last_name', $Password )';
 
 if ($conn->query($sql) === TRUE){
 
-$row = $result->fetch_assoc();
 
+
+$name = $row["name"];
 $First_name = $row["First_name"];
 $Last_name = $row["Last_name"];
 $Password = $row["password"];
