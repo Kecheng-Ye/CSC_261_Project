@@ -3,7 +3,10 @@
 <body>
 	
 <?php
-$name= $_POST["name"];
+$name = $_POST["name"];
+$First_name = $_POST["First_name"];
+$Last_name = $_POST["Last_name"];
+$Password = $_POST["Password"];
 
 $server = "localhost";
 $user = "kguo";
@@ -24,17 +27,14 @@ if ($conn->query($sql) === TRUE){
 
 
 
-$name = $row["name"];
-$First_name = $row["First_name"];
-$Last_name = $row["Last_name"];
-$Password = $row["password"];
+
 
 echo
 
 "<html>
 <body>
 <form action='phpUpdateFormScript.php' method='post'>
-<input type='hidden' name='name' value='$name'>
+<input type='hidden'>
 name: <input type='text' name='name' value='$name'><br>
 Firstname: <input type='text' name='First_name' value='$First_name'><br>
 Lastname: <input type='text' name='Last_name' value='$Last_name'><br>
