@@ -25,28 +25,12 @@ $sql = 'INSERT INTO User '.
 
 if ($conn->query($sql) === TRUE){
 
-
-
-
-
-echo
-
-"<html>
-<body>
-<form action='phpUpdateFormScript.php' method='post'>
-<input type='hidden'>
-name: <input type='text' name='name' value='$name'><br>
-Firstname: <input type='text' name='First_name' value='$First_name'><br>
-Lastname: <input type='text' name='Last_name' value='$Last_name'><br>
-Password: <input type='text' name='Password' value='$Password'><br>
-<input type ='submit'>
-</form>
-</body>
-</html>";
-
+if ($conn->query($sql) === TRUE) {
+  echo "New record created successfully";
 } else {
-	echo "Error: " . $sql . "<br>" . $conn->error;
+  echo "Error: " . $sql . "<br>" . $conn->error;
 }
+
 $conn->close();
 
 ?>
