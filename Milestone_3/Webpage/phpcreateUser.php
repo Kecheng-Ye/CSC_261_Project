@@ -23,7 +23,6 @@ $sql = 'INSERT INTO User '.
       '(name, First_name, Last_name, password) '.
       'VALUES ( '$name','$First_name','$Last_name', $Password )';
 
-if ($conn->query($sql) === TRUE){
 
 if ($conn->query($sql) === TRUE) {
   echo "New record created successfully";
