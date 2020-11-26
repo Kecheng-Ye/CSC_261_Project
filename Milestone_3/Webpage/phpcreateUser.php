@@ -1,7 +1,8 @@
+   
 <!DOCTYPE html>
 <html>
 <body>
-	
+	 
 <?php
 $name = $_POST["name"];
 $First_name = $_POST["First_name"];
@@ -21,7 +22,7 @@ if($conn->connect_error){
 
 $sql = 'INSERT INTO User '.
       '(name, First_name, Last_name, password) '.
-      'VALUES ( '$name','$First_name','$Last_name', '$Password' )';
+      'VALUES ( '$name','$First_name','$Last_name', $Password )';
 
 
 if ($conn->query($sql) === TRUE) {
