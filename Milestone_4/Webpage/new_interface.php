@@ -184,29 +184,32 @@ function subscribe_info($usr_name, $table){
 
 ?>
 
-<!-- User title -->
-<h1>User: <?php echo $name ?></h1>
 
-<!-- Left Part(Infomation) -->
-<section class="container">
-<div class="left-half">
-	<h2>Personal Infomation</h2>
+
+
+
+<div class="header">
+  <h2>User: <?php echo $name ?></h2>
+</div>
+
+<div class="row">
+  <div class="column" style="background-color:#aaa;">	<h2>Personal Infomation</h2>
 	<!-- call the predefined function to echo stuff -->
 	<?php person_info($name, "User");?>
 	<!-- directly parse the name argument to the update interface for update-->
 	<form action="phpUpdateForm.php" method="post">
 	<input type ="hidden", name="name", value= <?php echo $name?>>
 	<button type ="submit">edit</button>
-	</form>
-</div>
-
-<div class="header">
-  <h2>Header</h2>
-</div>
-
-<div class="row">
-  <div class="column" style="background-color:#aaa;">Column</div>
-  <div class="column" style="background-color:#bbb;">Column</div>
+	</form></div>
+  <div class="column" style="background-color:#bbb;">
+	<article>
+	<h2>Liked Video</h2>
+	<?php like_info($name, "likes");?>
+	<iframe width="420" height="345" src="https://www.youtube.com/embed/tgbNymZ7vqY?autoplay=1&mute=1"></iframe>
+	<h2>Subscribed Channel</h2>
+	<?php subscribe_info($name, "Subscribe");?>
+</article>
+	</div>
  
 </div>
 
