@@ -128,8 +128,8 @@ function like_info($usr_name, $table){
 					$id = key($row);
 					
 					var url = "https://www.youtube.com/embed/" + $row[$id] + "?autoplay=1&mute=1";
-					
-					echo'   <a href= url>     <input type="button"/>   </a>';
+					echo url;
+// 					echo'   <a href= url>     <input type="button"/>   </a>';
 					 
 					echo $row[$id];
 // 					header('Location: videoDisplay.php');
