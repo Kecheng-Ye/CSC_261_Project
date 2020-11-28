@@ -164,15 +164,15 @@ function subscribe_info($usr_name, $table){
 				if(key($row) == $name_KV[$table]){
 				}else if (key($row) == "Channel_id"){
 					$id = key($row);
-					<html>
-					<body>
- 					<form method="POST" action="displayVideo.php">
-  					<input type="watch"/>
-  					</form>
-					</body>
-					</html>
-					
-					<iframe width="420" height="345" src="https://www.youtube.com/embed/"+"<?php echo $id;?>"+"?autoplay=1&mute=1"></iframe>
+					<?php
+					echo"<html>";
+					echo"<body>";
+					echo"<form method="POST" action="displayVideo.php">";
+					echo"<input type="watch"/>";
+					echo"</form>";
+					echo"</body>";
+					echo"</html>";
+					?>
 					$channel_query = "SELECT Title FROM Channel WHERE id = "  . $row[$id];
 					$query = $conn->query($channel_query);
 					$result = $query->fetch_assoc();
