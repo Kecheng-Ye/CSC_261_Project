@@ -134,7 +134,7 @@ function like_info($usr_name, $table){
 // </form>
 // 					echo '<button onclick="location.href=$row[id]" type="button">
 //          www.example.com</button>'
-					echo'   <a href= <php echo $row[id]?>>     <input type="button"/>   </a>';
+					echo'   <a href= $url>     <input type="button"/>   </a>';
 					 
 // 					echo $row[$id];
 // 					header('Location: videoDisplay.php');
