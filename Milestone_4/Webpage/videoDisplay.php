@@ -27,7 +27,7 @@ echo' <iframe width="420" height="315" src=' .$url. '> </iframe>';
 //     </form>';
 
 
-if(array_key_exists('return', $_POST)) { 
+if(array_key_exists('goback', $_POST)) { 
             goback(); 
         } ;
 function goback() { 
