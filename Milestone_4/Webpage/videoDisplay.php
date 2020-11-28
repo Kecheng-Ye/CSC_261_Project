@@ -23,7 +23,7 @@ $url = "https://www.youtube.com/embed/".$videoId;
 echo' <iframe width="420" height="315" src=' .$url. '> </iframe>';
 
 echo '<form action="user_interface.php"  method="post">
-        <input type ="hidden", name="name", value= <?php echo $name?>>
+        <input type ="hidden", name="name", value= '.$name.'>
     </form>'
   
 $conn->close();
