@@ -126,6 +126,9 @@ function like_info($usr_name, $table){
 					# the function will do a second query to search for the Video title of that video id 
 					# and print out it
 					$id = key($row);
+					echo'<form method="POST" action="videoDisplay.php">
+    <input type="submit"/>';
+					 
 					echo $row[$id];
 // 					header('Location: videoDisplay.php');
 	
