@@ -28,9 +28,9 @@ echo' <iframe width="420" height="315" src=' .$url. '> </iframe>';
 
 
 if(array_key_exists('return', $_POST)) { 
-            return(); 
+            goback(); 
         } ;
-function return() { 
+function goback() { 
             echo "This is Button1 that is selected"; 
         } 
 // if(isset($_POST['return'])) { 
@@ -47,7 +47,7 @@ $conn->close();
 <!-- <br>
 <a href="./user_interface.php">Return to Main</a><br>	 -->
 <form method="post"> 
-        <input type="submit" name="return"
+        <input type="submit" name="goback"
                 value="go back"/>  </form> ;
 	    
 
