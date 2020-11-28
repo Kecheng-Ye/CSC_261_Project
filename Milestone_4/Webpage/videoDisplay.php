@@ -18,7 +18,7 @@ if($conn->connect_error){
 	die("Connection failed ".$conn->connect_error);
 }
  
-echo'<title>mini-youtube</title>';
+
 $url = "https://www.youtube.com/embed/".$videoId;
 echo' <iframe width="420" height="315" src=' .$url. '> </iframe>';
 
