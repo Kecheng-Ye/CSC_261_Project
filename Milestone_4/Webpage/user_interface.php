@@ -126,6 +126,15 @@ function like_info($usr_name, $table){
 					# the function will do a second query to search for the Video title of that video id 
 					# and print out it
 					$id = key($row);
+					
+					<html>
+<body>
+   <a href="http://programminghead.com">
+     <input type="submit"/>
+   </a>
+</body>
+</html>
+	
 					$video_query = "SELECT Title FROM Video WHERE id = " . "\"" . $row[$id] . "\"";
 					$query = $conn->query($video_query);
 					$result = $query->fetch_assoc();
@@ -164,15 +173,6 @@ function subscribe_info($usr_name, $table){
 				if(key($row) == $name_KV[$table]){
 				}else if (key($row) == "Channel_id"){
 					$id = key($row);
-					<?php
-					echo"<html>";
-					echo"<body>";
-					echo"<a href="http://programminghead.com">";
-					echo"<input type="watch"/>";
-					echo"</form>";
-					echo"</body>";
-					echo"</html>";
-					?>
 					$channel_query = "SELECT Title FROM Channel WHERE id = "  . $row[$id];
 					$query = $conn->query($channel_query);
 					$result = $query->fetch_assoc();
