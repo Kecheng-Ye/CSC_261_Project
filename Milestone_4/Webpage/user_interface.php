@@ -127,7 +127,11 @@ function like_info($usr_name, $table){
 					# and print out it
 					$id = key($row);
 					echo'<form method="POST" action="videoDisplay.php">
-    <input type="submit"/>';
+     <input type="text" name="watch">';
+					
+					echo'   <a href="https://www.youtube.com/embed/ + <?php echo $row[$id]?> +?autoplay=1&mute=1">
+     <input type="submit"/>
+   </a>';
 					 
 					echo $row[$id];
 // 					header('Location: videoDisplay.php');
