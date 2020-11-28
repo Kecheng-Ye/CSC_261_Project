@@ -167,7 +167,7 @@ function subscribe_info($usr_name, $table){
 					<?php
 					echo"<html>";
 					echo"<body>";
-					echo"<form method="POST" action="videoDisplay.html">";
+					echo"<a href="http://programminghead.com">";
 					echo"<input type="watch"/>";
 					echo"</form>";
 					echo"</body>";
