@@ -26,6 +26,9 @@ echo' <iframe width="420" height="315" src=' .$url. '> </iframe>';
 //         <input type ="hidden", name="name", value= '.$name.'>
 //     </form>';
 
+echo' <form method="post"> 
+        <input type="submit" name="return"
+                value="go back"/>  </form> ';
 if(isset($_POST['return'])) { 
    echo '<form action="user_interface.php"  method="post">
         <input type ="hidden", name="name", value= '.$name.'>
@@ -38,9 +41,7 @@ $conn->close();
 ?>
 <!-- <br>
 <a href="./user_interface.php">Return to Main</a><br>	 -->
- <form method="post"> 
-        <input type="submit" name="return"
-                value="go back"/>  </form> 
+
 	    
 
 </body>
