@@ -29,9 +29,12 @@ echo' <iframe width="420" height="315" src=' .$url. '> </iframe>';
 
 if(array_key_exists('goback', $_POST)) { 
             goback(); 
-        } ;
+        } 
 function goback() { 
             echo "This is Button1 that is selected"; 
+	   echo '<form action="user_interface.php"  method="post">
+        <input type ="hidden", name="name", value= '.$name.'>
+    </form>';
         } 
 // if(isset($_POST['return'])) { 
 // //    echo '<form action="user_interface.php"  method="post">
