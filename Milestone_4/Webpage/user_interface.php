@@ -127,10 +127,10 @@ function like_info($usr_name, $table){
 					# and print out it
 					$id = key($row);
 					echo'<form method="POST" action="videoDisplay.php">
-     <input type="text" name="watch">';
+     <input type="button" name="watch"/>';
 					
 					echo'   <a href="https://www.youtube.com/embed/ + <?php echo $row[$id]?> +?autoplay=1&mute=1">
-     <input type="submit"/>
+     <input type="button"/>
    </a>';
 					 
 					echo $row[$id];
