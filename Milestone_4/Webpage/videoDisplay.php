@@ -38,7 +38,7 @@ function goback() {
 
     <script type="text/javascript">
         document.getElementById("goto_Demo").submit();
-    </script>'
+    </script>';
         } 
 // if(isset($_POST['return'])) { 
 // //    echo '<form action="user_interface.php"  method="post">
