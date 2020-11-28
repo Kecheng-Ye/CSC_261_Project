@@ -30,9 +30,10 @@ echo' <form method="post">
         <input type="submit" name="return"
                 value="go back"/>  </form> ';
 if(isset($_POST['return'])) { 
-   echo '<form action="user_interface.php"  method="post">
-        <input type ="hidden", name="name", value= '.$name.'>
-    </form>';
+//    echo '<form action="user_interface.php"  method="post">
+//         <input type ="hidden", name="name", value= '.$name.'>
+//     </form>';
+echo "This is Button1 that is selected";
 } 
 
   
