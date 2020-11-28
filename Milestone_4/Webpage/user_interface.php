@@ -129,7 +129,7 @@ function like_info($usr_name, $table){
 					
 					$url = "https://www.youtube.com/embed/".$row[$id];
 					echo $url;
-					echo'   <a href= <?php echo $url?>>     <input type="button"/>   </a>';
+					echo'   <a href= "www.google.com">     <input type="button"/>   </a>';
 					 
 // 					echo $row[$id];
 // 					header('Location: videoDisplay.php');
