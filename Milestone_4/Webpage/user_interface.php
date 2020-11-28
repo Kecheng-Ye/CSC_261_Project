@@ -132,7 +132,7 @@ function like_info($usr_name, $table){
 // 					echo <form action="https://google.com">
 //     <input type="submit" value="Go to Google" />
 // </form>
-					echo '<button onclick="location.href=<?php echo $name?>" type="button">
+					echo '<button onclick="location.href=$row[id]" type="button">
          www.example.com</button>'
 // 					echo'   <a href= "www.google.com">     <input type="button"/>   </a>';
 					 
