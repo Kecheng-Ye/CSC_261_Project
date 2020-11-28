@@ -130,7 +130,7 @@ function like_info($usr_name, $table){
 					<html>
 <body>
   <form method="POST" action="videoDisplay.php">
-    <input type="watch"/>
+    <input type="submit"/>
   </form>
 </body>
 </html>
