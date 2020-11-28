@@ -126,23 +126,12 @@ function like_info($usr_name, $table){
 					# the function will do a second query to search for the Video title of that video id 
 					# and print out it
 					$id = key($row);
-					
-					$url = "https://www.youtube.com/embed/".$row[$id];
-					echo $url;
-// 					echo <form action="https://google.com">
-//     <input type="submit" value="Go to Google" />
-// </form>
-// 					echo '<button onclick="location.href=$row[id]" type="button">
-//          www.example.com</button>'
-					echo'   <a href=' .$url. '>     <input type="button"/>   </a>';
-					 
-// 					echo $row[$id];
-// 					header('Location: videoDisplay.php');
-	
 					$video_query = "SELECT Title FROM Video WHERE id = " . "\"" . $row[$id] . "\"";
 					$query = $conn->query($video_query);
 					$result = $query->fetch_assoc();
 					echo key($result).":\t" . $result[key($result)] . "<br></br>";
+					$url = "https://www.youtube.com/embed/".$row[$id];
+					echo'   <a href=' .$url. '>     <input type="button" value="watch"/>   </a>';
 				}else{
 					echo key($row).":\t" . $row[key($row)] . "<br></br>";
 					# TODO
