@@ -129,7 +129,7 @@ function like_info($usr_name, $table){
 					echo'<form method="POST" action="videoDisplay.php">
      <input type="button" name="watch"/>';
 					
-					echo'   <a href="https://www.youtube.com/embed/"> + <href = "<?php echo $row[$id]?>"> + <href = "?autoplay=1&mute=1">>
+					echo'   <a href="https://www.youtube.com/embed/"> <href = "<?php echo $row[$id]?>">  <href = "?autoplay=1&mute=1">>
      <input type="button"/>
    </a>';
 					 
