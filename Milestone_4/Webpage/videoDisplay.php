@@ -3,8 +3,8 @@
 <body>
   
  <?php
-$videoId = $_POST["row[$id]"];
-$usr_name = $_POST["name"];
+$videoId = $_GET["videoId"];
+$name = $_GET["name"];
 
 
 $server = "localhost";
@@ -18,7 +18,7 @@ if($conn->connect_error){
 	die("Connection failed ".$conn->connect_error);
 }
  
-echo $usr_name;
+echo $name;
 echo $videoId;
 
 // <iframe width="420" height="345" src="https://www.youtube.com/embed/tgbNymZ7vqY?autoplay=1&mute=1">
