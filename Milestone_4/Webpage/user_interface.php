@@ -127,9 +127,9 @@ function like_info($usr_name, $table){
 					# and print out it
 					$id = key($row);
 					
-					var url = "https://www.youtube.com/embed/" + $row[$id];
-					echo url;
-					echo'   <a href= url>     <input type="button"/>   </a>';
+					$url = "https://www.youtube.com/embed/" + $row[$id];
+					echo $url;
+// 					echo'   <a href= url>     <input type="button"/>   </a>';
 					 
 					echo $row[$id];
 // 					header('Location: videoDisplay.php');
