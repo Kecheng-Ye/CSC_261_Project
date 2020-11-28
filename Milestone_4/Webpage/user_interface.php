@@ -132,6 +132,8 @@ function like_info($usr_name, $table){
 					echo key($result).":\t" . $result[key($result)] . "<br></br>";
 					$url = "https://www.youtube.com/embed/".$row[$id];
 					echo'   <a href=' .$url. '>     <input type="button" value="watch"/>   </a>';
+					echo'<form method="POST" action="videoDisplay.php">
+    <input type="submit"/>';
 				}else{
 					echo key($row).":\t" . $row[key($row)] . "<br></br>";
 					# TODO
