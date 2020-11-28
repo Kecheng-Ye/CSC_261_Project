@@ -22,13 +22,15 @@ if($conn->connect_error){
 $url = "https://www.youtube.com/embed/".$videoId;
 echo' <iframe width="420" height="315" src=' .$url. '> </iframe>';
 
-
+echo '<form action="user_interface.php"  method="post">
+        <input type ="hidden", name="name", value= <?php echo $name?>>
+    </form>'
   
 $conn->close();
 
 ?>
-<br>
-<a href="./user_interface.php">Return to Main</a><br>	
+<!-- <br>
+<a href="./user_interface.php">Return to Main</a><br>	 -->
 
 </body>
 </html>
