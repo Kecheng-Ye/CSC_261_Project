@@ -164,6 +164,8 @@ function subscribe_info($usr_name, $table){
 				if(key($row) == $name_KV[$table]){
 				}else if (key($row) == "Channel_id"){
 					$id = key($row);
+					echo"<iframe width="420" height="345" src="\https://www.youtube.com/embed/"\+"\$id"\+"\?autoplay=1&mute=1"\></iframe>"
+					
 					$channel_query = "SELECT Title FROM Channel WHERE id = "  . $row[$id];
 					$query = $conn->query($channel_query);
 					$result = $query->fetch_assoc();
@@ -180,6 +182,9 @@ function subscribe_info($usr_name, $table){
 		}
 	}
 }
+	
+	
+
 
 
 ?>
@@ -205,7 +210,6 @@ function subscribe_info($usr_name, $table){
 	<article>
 	<h2>Liked Video</h2>
 	<?php like_info($name, "likes");?>
-	<iframe width="420" height="345" src="https://www.youtube.com/embed/tgbNymZ7vqY?autoplay=1&mute=1"></iframe>
 	<h2>Subscribed Channel</h2>
 	<?php subscribe_info($name, "Subscribe");?>
 </article>
