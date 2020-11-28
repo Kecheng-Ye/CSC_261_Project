@@ -126,9 +126,8 @@ function like_info($usr_name, $table){
 					# the function will do a second query to search for the Video title of that video id 
 					# and print out it
 					$id = key($row);
-					echo'<form method="POST" action="videoDisplay.php">
-     <input type="button" name="watch"/>';
-					var url = "https://www.youtube.com/embed/" + <?php echo $row[$id]?> + "?autoplay=1&mute=1";
+					
+					var url = "https://www.youtube.com/embed/" + $row[$id] + "?autoplay=1&mute=1";
 					
 					echo'   <a href= url>     <input type="button"/>   </a>';
 					 
