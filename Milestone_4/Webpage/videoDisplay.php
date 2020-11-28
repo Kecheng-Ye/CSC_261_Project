@@ -24,7 +24,7 @@ echo' <iframe width="420" height="315" src=' .$url. '> </iframe>';
 
 echo '<form action="user_interface.php"  method="post">
         <input type ="hidden", name="name", value= '.$name.'>
-    </form>'
+    </form>';
   
 $conn->close();
 
