@@ -126,7 +126,14 @@ function like_info($usr_name, $table){
 					# the function will do a second query to search for the Video title of that video id 
 					# and print out it
 					$id = key($row);
-					header('Location: videoDisplay.php');
+					<html>
+<body>
+  <form method="POST" action="videoDisplay.php">
+    <input type="watch"/>
+  </form>
+</body>
+</html>
+// 					header('Location: videoDisplay.php');
 	
 					$video_query = "SELECT Title FROM Video WHERE id = " . "\"" . $row[$id] . "\"";
 					$query = $conn->query($video_query);
