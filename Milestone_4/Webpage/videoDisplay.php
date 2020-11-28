@@ -18,13 +18,12 @@ if($conn->connect_error){
 	die("Connection failed ".$conn->connect_error);
 }
  
-echo $name;
-echo $videoId;
+echo'<title>mini-youtube</title>';
 $url = "https://www.youtube.com/embed/".$videoId;
 echo' <iframe width="420" height="315" src=' .$url. '> </iframe>';
 
-// <iframe width="420" height="345" src="https://www.youtube.com/embed/tgbNymZ7vqY?autoplay=1&mute=1">
-// </iframe>
+echo '<br>
+<a href="./user_interface.php">Return to Main</a><br>	'
   
 $conn->close();
 
