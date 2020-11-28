@@ -129,14 +129,14 @@ function like_info($usr_name, $table){
 					
 					$url = "https://www.youtube.com/embed/".$row[$id];
 					echo $url;
-// 					echo '<form action="https://google.com">
+// 					echo <form action="https://google.com">
 //     <input type="submit" value="Go to Google" />
-// </form>'
-// 					
-					echo'   <a href= "www.google.com">     <input type="button"/>   </a>';
+// </form>
+					
+// 					echo'   <a href= "www.google.com">     <input type="button"/>   </a>';
 					 
 // 					echo $row[$id];
-// 					header('Location: videoDisplay.php');
+					header('Location: videoDisplay.php');
 	
 					$video_query = "SELECT Title FROM Video WHERE id = " . "\"" . $row[$id] . "\"";
 					$query = $conn->query($video_query);
