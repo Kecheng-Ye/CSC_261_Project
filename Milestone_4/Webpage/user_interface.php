@@ -132,11 +132,12 @@ function like_info($usr_name, $table){
 // 					echo <form action="https://google.com">
 //     <input type="submit" value="Go to Google" />
 // </form>
-					
+					echo '<button onclick="location.href=<?php echo $name?>" type="button">
+         www.example.com</button>'
 // 					echo'   <a href= "www.google.com">     <input type="button"/>   </a>';
 					 
 // 					echo $row[$id];
-					header('Location: videoDisplay.php');
+// 					header('Location: videoDisplay.php');
 	
 					$video_query = "SELECT Title FROM Video WHERE id = " . "\"" . $row[$id] . "\"";
 					$query = $conn->query($video_query);
