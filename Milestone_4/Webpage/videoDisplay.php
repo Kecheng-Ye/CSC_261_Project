@@ -34,13 +34,13 @@ if(array_key_exists('goback', $_POST)) {
 function goback() { 
 	global $name;
 //             echo "This is Button1 that is selected"; 
-     echo '<form action="user_interface.php" id="goto_Demo" method="post">
+     echo 'jjjjjjjj  <form action="user_interface.php" id="goto_Demo" method="post">
         <input type ="hidden", name="goback", value='.$name.'>
-    </form>
+    </form>';
 
-    <script type="text/javascript">
-        document.getElementById("goto_Demo").submit();
-    </script>';
+//     <script type="text/javascript">
+//         document.getElementById("goto_Demo").submit();
+//     </script>';
         } 
 // if(isset($_POST['return'])) { 
 // //    echo '<form action="user_interface.php"  method="post">
