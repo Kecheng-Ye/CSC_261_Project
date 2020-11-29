@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Bootstrap Example</title>
+  <title>Mini-Youtube</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -24,6 +24,22 @@
       height: 100%;
     }
     
+	/* Create three equal columns that floats next to each other */
+	.column {
+	  float: left;
+	  width:50%;
+	  padding: 10px;
+	  height: 500px; /* Should be removed. Only for demonstration */
+
+	}
+
+	/* Clear floats after the columns */
+	.row:after {
+	  content: "";
+	  display: table;
+	  clear: both;
+	}
+	  
     /* Set black background color, white text and some padding */
     footer {
       background-color: #555;
