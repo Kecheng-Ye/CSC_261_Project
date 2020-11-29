@@ -38,7 +38,7 @@ font-size: 35px;
 .column {
   float: left;
   width:50%;
-  padding: 20px;
+  padding: 30px;
   height: 500px; /* Should be removed. Only for demonstration */
 
 }
@@ -52,10 +52,13 @@ font-size: 35px;
 	  
     /* Set black background color, white text and some padding */
     footer {
-      position: fixed;
-      background-color: #555;
-      color: white;
-      padding: 15px;
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	background-color: #555;
+	color: white;
+	padding: 15px;
     }
     
     /* On small screens, set height to 'auto' for sidenav and grid */
