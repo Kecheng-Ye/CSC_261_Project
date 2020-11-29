@@ -28,6 +28,7 @@ body {
   float: left;
   width:50%;
   padding: 10px;
+  height: 500px; /* Should be removed. Only for demonstration */
  
 }
 
