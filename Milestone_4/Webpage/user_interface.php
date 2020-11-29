@@ -87,7 +87,7 @@ font-size: 35px;
         <li><a href="./channels.php">Channel</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="./user_login.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        <li><a href="./main.html"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
       </ul>
     </div>
   </div>
@@ -229,7 +229,7 @@ function subscribe_info($usr_name, $table){
 </div>
 
 <div class="row">
-  <div class="column" style="background-color:#aaa;">	<h2>Personal Infomation</h2>
+  <div class="column" style="background-color:#bbb;">	<h2>Personal Infomation</h2>
 	<!-- call the predefined function to echo stuff -->
 	<?php person_info($name, "User");?>
 	<!-- directly parse the name argument to the update interface for update-->
