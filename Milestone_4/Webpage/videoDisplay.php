@@ -31,16 +31,16 @@ echo' <iframe width="420" height="315" src=' .$url. '> </iframe>';
 if(array_key_exists('goback', $_POST)) { 
             goback(); 
         } 
-// function goback() { 
-// //             echo "This is Button1 that is selected"; 
-//      echo '<form action="user_interface.php" id="goto_Demo" method="post">
-//         <input type ="hidden", name="name", value='.$name.'>
-//     </form>
+function goback() { 
+//             echo "This is Button1 that is selected"; 
+     echo '<form action="user_interface.php" id="goto_Demo" method="post">
+        <input type ="hidden", name="goback", value='.$name.'>
+    </form>
 
-//     <script type="text/javascript">
-//         document.getElementById("goto_Demo").submit();
-//     </script>';
-//         } 
+    <script type="text/javascript">
+        document.getElementById("goto_Demo").submit();
+    </script>';
+        } 
 // if(isset($_POST['return'])) { 
 // //    echo '<form action="user_interface.php"  method="post">
 // //         <input type ="hidden", name="name", value= '.$name.'>
@@ -53,15 +53,7 @@ $conn->close();
 
 ?>
 
-<?php 
-    <form action="user_interface.php" id="goto_Demo" method="post">
-        <input type ="hidden", name="name", value= <?php echo $name?>>
-    </form>
 
-    <script type="text/javascript">
-        document.getElementById("goto_Demo").submit();
-    </script>
-?>
 
 <!-- <br>
 <a href="./user_interface.php">Return to Main</a><br>	 -->
