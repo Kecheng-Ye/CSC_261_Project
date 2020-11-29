@@ -130,7 +130,7 @@ function like_info($usr_name, $table){
 					echo '<form method="GET" action="videoDisplay.php">
 					 <input type="hidden" name="name" value='  .$name. '>
       					  <input type="hidden" name="videoId" value='.$row[$id].'>
-  					  <input type="button" value="watch"/> </form>';
+  					  <input type="submit" value="watch"/> </form>';
 				}else{
 					echo key($row).":\t" . $row[key($row)] . "<br></br>";
 					# TODO
