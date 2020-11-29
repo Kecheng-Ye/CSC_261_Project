@@ -35,13 +35,13 @@ function goback() {
 	global $name;
 	echo $name;
 //             echo "This is Button1 that is selected"; 
-     echo 'jjjjjjjj  <form action="user_interface.php" id="goto_Demo" method="post">
-        <input type ="hidden", name="goback", value='.$name.'>
-    </form>';
+     echo '<form action="user_interface.php" id="goto_Demo" method="post">
+        <input type ="hidden", name="goback", value=\'$name\'>
+    </form>
 
-//     <script type="text/javascript">
-//         document.getElementById("goto_Demo").submit();
-//     </script>';
+    <script type="text/javascript">
+        document.getElementById("goto_Demo").submit();
+    </script>';
         } 
 // if(isset($_POST['return'])) { 
 // //    echo '<form action="user_interface.php"  method="post">
