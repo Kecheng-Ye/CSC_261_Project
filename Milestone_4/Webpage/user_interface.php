@@ -52,6 +52,7 @@ font-size: 35px;
 	  
     /* Set black background color, white text and some padding */
     footer {
+      position: fixed;
       background-color: #555;
       color: white;
       padding: 15px;
