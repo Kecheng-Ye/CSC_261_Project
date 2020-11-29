@@ -38,7 +38,7 @@ font-size: 35px;
 .column {
   float: left;
   width:50%;
-  padding: 10px;
+  padding: 20px;
   height: 500px; /* Should be removed. Only for demonstration */
 
 }
