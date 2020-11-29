@@ -1,61 +1,50 @@
 <!DOCTYPE html>
-<html lang="en">
-	
 
-<head>
-<title>mini-youtube</title>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<html>
+<body>
+
+
+<!-- CSS style here -->
 <style>
-* {
-  box-sizing: border-box;
+/* Pen-specific styles */
+html, body, section {
+height: 100%;
 }
 
 body {
-  font-family: Arial, Helvetica, sans-serif;
+color: #000;
+font-family: sans-serif;
+font-size: 1.25rem;
+line-height: 150%;
+text-align: center;
 }
 
-/* Style the header */
-.header {
-  background-color: #f1f1f1;
-  padding: 30px;
-  text-align: center;
-  font-size: 35px;
+
+div {
+display: flex;
+flex-direction: column;
 }
 
-/* Create three equal columns that floats next to each other */
-.column {
-  float: left;
-  width:50%;
-  padding: 10px;
-  height: 300px; /* Should be removed. Only for demonstration */
+h2 {
+font-size: 1.5rem;
+margin: 0 0 0.75rem 0;
 }
 
-/* Clear floats after the columns */
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
+/* Pattern styles */
+.container {
+display: flex;
 }
 
-/* Style the footer */
-.footer {
-  background-color: #f1f1f1;
-  padding: 10px;
-  text-align: center;
+.left-half {
+flex: 1;
+padding: 1rem;
 }
 
-/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
-@media (max-width: 600px) {
-  .column {
-    width: 100%;
-  }
+.right-half {
+flex: 1;
+padding: 1rem;
 }
 </style>
-</head>
-<body>
-	
-	
 
 <?php
 
@@ -184,38 +173,35 @@ function subscribe_info($usr_name, $table){
 
 ?>
 
+<!-- User title -->
+<h1>User: <?php echo $name ?></h1>
 
-
-
-
-<div class="header">
-  <h2>User: <?php echo $name ?></h2>
-</div>
-
-<div class="row">
-  <div class="column" style="background-color:#aaa;">	<h2>Personal Infomation</h2>
+<!-- Left Part(Infomation) -->
+<section class="container">
+<div class="left-half">
+	<h2>Personal Infomation</h2>
 	<!-- call the predefined function to echo stuff -->
 	<?php person_info($name, "User");?>
 	<!-- directly parse the name argument to the update interface for update-->
 	<form action="phpUpdateForm.php" method="post">
 	<input type ="hidden", name="name", value= <?php echo $name?>>
 	<button type ="submit">edit</button>
-	</form></div>
-  <div class="column" style="background-color:#bbb;">
-	<article>
+	</form>
+</div>
+
+
+<!-- Right Part(Video) -->
+<div class="right-half">
+<article>
 	<h2>Liked Video</h2>
 	<?php like_info($name, "likes");?>
-	<iframe width="420" height="345" src="https://www.youtube.com/embed/tgbNymZ7vqY?autoplay=1&mute=1"></iframe>
 	<h2>Subscribed Channel</h2>
 	<?php subscribe_info($name, "Subscribe");?>
 </article>
-	</div>
- 
 </div>
+</secion>
 
-<div class="footer">
-  <p>Footer</p>
-</div>
 
-</body>
+
 </html>
+</body>
