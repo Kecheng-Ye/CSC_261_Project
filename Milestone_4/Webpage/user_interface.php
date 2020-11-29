@@ -125,12 +125,12 @@ function like_info($usr_name, $table){
 					$query = $conn->query($video_query);
 					$result = $query->fetch_assoc();
 					echo key($result).":\t" . $result[key($result)] . "<br></br>";
-					$url = "https://www.youtube.com/embed/".$row[$id];
-					echo'   <a href=' .$url. '>     <input type="button" value="watch"/>   </a>';
+// 					$url = "https://www.youtube.com/embed/".$row[$id];
+// 					echo'   <a href=' .$url. '>     <input type="button" value="watch"/>   </a>';
 					echo '<form method="GET" action="videoDisplay.php">
 					 <input type="hidden" name="name" value='  .$name. '>
-        <input type="hidden" name="videoId" value='.$row[$id].'>
-    <input type="submit"/> </form>';
+      					  <input type="hidden" name="videoId" value='.$row[$id].'>
+  					  <input type="button" value="watch"/> </form>';
 				}else{
 					echo key($row).":\t" . $row[key($row)] . "<br></br>";
 					# TODO
