@@ -19,7 +19,7 @@ $action_status = mysqli_query($conn, $action);
 
 <!-- after operation, go back to User Interface automatically -->
 <?php if ($action_status): ?>
-    <form action="../User_Demo.php" id="goto_Demo" method="post">
+    <form action="../user_interface.php" id="goto_Demo" method="post">
         <input type ="hidden", name="name", value= <?php echo $usr_name?>>
     </form>
 
