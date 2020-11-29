@@ -32,7 +32,7 @@ $operation = $_POST['operation'];
                         <button type=\"submit\">%s</button>\n
                         </form>
 
-                        <form action=\"../videoDisplay.php\" method=\"post\">\n
+                        <form action=\"../videoDisplay.php\" method=\"GET\">\n
                         <input type =\"hidden\", name=\"name\", value= \"$usr_name\">\n
                         <input type =\"hidden\", name=\"videoId\", value= %s>\n
                         <button type=\"submit\">view</button>\n
