@@ -32,6 +32,7 @@ if(array_key_exists('goback', $_POST)) {
             goback(); 
         } 
 function goback() { 
+	global $name;
 //             echo "This is Button1 that is selected"; 
      echo '<form action="user_interface.php" id="goto_Demo" method="post">
         <input type ="hidden", name="goback", value='.$name.'>
