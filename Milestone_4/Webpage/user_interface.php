@@ -60,12 +60,7 @@ body {
 <?php
 
 $name = $_POST['name'];
-$server = "localhost";
-$user = "kguo";
-$pwd = "17417174";
-$db = "kguo_1";
-
-$conn = new mysqli($server, $user, $pwd, $db);
+include "utils.php";
 # the hashmap like structure for projecting different attribute name of 'user_name' in different table
 $name_KV = [
 "User" => "name",
@@ -186,11 +181,6 @@ function subscribe_info($usr_name, $table){
 		}
 	}
 }
-	
-	
-
-
-
 ?>
 
 
@@ -214,8 +204,30 @@ function subscribe_info($usr_name, $table){
 	<article>
 	<h2>Liked Video</h2>
 	<?php like_info($name, "likes");?>
+	<form action="user_video/user_video.php" method="post">
+		<input type ="hidden", name="name", value= <?php echo $name?>>
+		<input type ="hidden", name="operation", value= "add">
+		<button type ="submit">add</button>
+		</form>
+
+		<form action="user_video/user_video.php" method="post">
+		<input type ="hidden", name="name", value= <?php echo $name?>>
+		<input type ="hidden", name="operation", value= "delete">
+		<button type ="submit">delete</button>
+		</form>
 	<h2>Subscribed Channel</h2>
 	<?php subscribe_info($name, "Subscribe");?>
+	<form action="user_channel/user_channel.php" method="post">
+		<input type ="hidden", name="name", value= <?php echo $name?>>
+		<input type ="hidden", name="operation", value= "add">
+		<button type ="submit">add</button>
+		</form>
+
+		<form action="user_channel/user_channel.php" method="post">
+		<input type ="hidden", name="name", value= <?php echo $name?>>
+		<input type ="hidden", name="operation", value= "delete">
+		<button type ="submit">delete</button>
+		</form>
 </article>
 	</div>
  
