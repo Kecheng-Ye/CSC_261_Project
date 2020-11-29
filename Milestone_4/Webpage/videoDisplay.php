@@ -28,21 +28,21 @@ echo' <iframe width="420" height="315" src=' .$url. '> </iframe>';
 //     </form>';
 
 
-if(array_key_exists('goback', $_POST)) { 
-            goback(); 
-        } 
-function goback() { 
-	global $name;
-	echo $name;
-//             echo "This is Button1 that is selected"; 
-     echo '<form action=\"user_interface.php\" id=\"goto_Demo\" method=\"post\">
-        <input type =\"hidden\", name=\"name\", value='.$name.'>
-    </form>
+// if(array_key_exists('goback', $_POST)) { 
+//             goback(); 
+//         } 
+// function goback() { 
+// 	global $name;
+// 	echo $name;
+// //             echo "This is Button1 that is selected"; 
+//      echo '<form action=\"user_interface.php\" id=\"goto_Demo\" method=\"post\">
+//         <input type =\"hidden\", name=\"name\", value='.$name.'>
+//     </form>
 
-    <script type=\"text/javascript\">
-        document.getElementById(\"goto_Demo\").submit();
-    </script>';
-        } 
+//     <script type=\"text/javascript\">
+//         document.getElementById(\"goto_Demo\").submit();
+//     </script>';
+//         } 
 // if(isset($_POST['return'])) { 
 // //    echo '<form action="user_interface.php"  method="post">
 // //         <input type ="hidden", name="name", value= '.$name.'>
@@ -59,9 +59,15 @@ $conn->close();
 
 <!-- <br>
 <a href="./user_interface.php">Return to Main</a><br>	 -->
-<form method="post"> 
+	
+<!-- <form method="post"> 
         <input type="submit" name="goback"
-                value="go back"/>  </form> ;
+                value="go back"/>  </form> ; -->
+
+ <form action="user_interface.php" id="goto_Demo" method="post">
+        <input type ="hidden", name="name", value= <?php echo $name?>>
+	 <button type="submit">Click Me!</button>
+    </form>
 	    
 
 </body>
