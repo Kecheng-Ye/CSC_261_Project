@@ -14,8 +14,8 @@
       border-radius: 0;
     }
     
-    /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
-    .row.content {height: 450px}
+/*     /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+/*     .row.content {height: 450px} */ */
     
     /* Set gray background color and 100% height */
     .sidenav {
@@ -23,22 +23,32 @@
       background-color: #f1f1f1;
       height: 100%;
     }
-    
-	/* Create three equal columns that floats next to each other */
-	.column {
-	  float: left;
-	  width:50%;
-	  padding: 10px;
-	  height: 500px; /* Should be removed. Only for demonstration */
+	  
+	  
+/* Style the header */
+.header {
+background-color: #f1f1f1;
+padding: 30px;
+text-align: center;
+font-size: 35px;
+}
 
-	}
 
-	/* Clear floats after the columns */
-	.row:after {
-	  content: "";
-	  display: table;
-	  clear: both;
-	}
+/* Create three equal columns that floats next to each other */
+.column {
+  float: left;
+  width:50%;
+  padding: 10px;
+  height: 500px; /* Should be removed. Only for demonstration */
+
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
 	  
     /* Set black background color, white text and some padding */
     footer {
@@ -83,62 +93,6 @@
   </div>
 </nav>
   
-
-<head>
-<title>mini-youtube</title>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-* {
-  box-sizing: border-box;
-}
-
-body {
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-/* Style the header */
-.header {
-  background-color: #f1f1f1;
-  padding: 30px;
-  text-align: center;
-  font-size: 35px;
-}
-
-/* Create three equal columns that floats next to each other */
-.column {
-  float: left;
-  width:50%;
-  padding: 10px;
-  height: 500px; /* Should be removed. Only for demonstration */
- 
-}
-
-/* Clear floats after the columns */
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-/* Style the footer */
-.footer {
-  background-color: #f1f1f1;
-  padding: 10px;
-  text-align: center;
-}
-
-/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
-@media (max-width: 600px) {
-  .column {
-    width: 100%;
-  }
-}
-</style>
-</head>
-<body>
-	
-	
 
 <?php
 
