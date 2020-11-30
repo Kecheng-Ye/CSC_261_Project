@@ -245,7 +245,7 @@ function subscribe_info($usr_name, $table){
 	<article>
 	<h2>Liked Video</h2>
 	<?php like_info($name, "likes");?>
-	<form action="user_video/user_video.php" method="post">
+		<form action="user_video/search_video.php" method="post">
 		<input type ="hidden", name="name", value= <?php echo $name?>>
 		<input type ="hidden", name="operation", value= "add">
 		<button type ="submit">add</button>
@@ -256,9 +256,10 @@ function subscribe_info($usr_name, $table){
 		<input type ="hidden", name="operation", value= "delete">
 		<button type ="submit">delete</button>
 		</form>
+	<!-- subscriber -->
 	<h2>Subscribed Channel</h2>
 	<?php subscribe_info($name, "Subscribe");?>
-	<form action="user_channel/user_channel.php" method="post">
+		<form action="user_channel/user_channel.php" method="post">
 		<input type ="hidden", name="name", value= <?php echo $name?>>
 		<input type ="hidden", name="operation", value= "add">
 		<button type ="submit">add</button>
