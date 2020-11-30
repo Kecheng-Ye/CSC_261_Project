@@ -1,60 +1,107 @@
 <!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Mini-Youtube</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+    /* Remove the navbar's default margin-bottom and rounded borders */ 
+    .navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+    }
+    
+/*     /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+/*     .row.content {height: 450px} */ */
+    
+    /* Set gray background color and 100% height */
+    .sidenav {
+      padding-top: 20px;
+      background-color: #f1f1f1;
+      height: 100%;
+    }
+	  
+	  
+/* Style the header */
+.header {
+background-color: #f1f1f1;
+padding: 30px;
+text-align: center;
+font-size: 35px;
+}
 
-<html>
+
+/* Create three equal columns that floats next to each other */
+.column {
+  float: left;
+  width:50%;
+  padding: 30px;
+  height: 500px; /* Should be removed. Only for demonstration */
+
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+	  
+    /* Set black background color, white text and some padding */
+    footer {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	background-color: #555;
+	color: white;
+	padding: 15px;
+    }
+    
+    /* On small screens, set height to 'auto' for sidenav and grid */
+    @media screen and (max-width: 767px) {
+      .sidenav {
+        height: auto;
+        padding: 15px;
+      }
+      .row.content {height:auto;} 
+    }
+  </style>
+</head>
 <body>
 
-
-<!-- CSS style here -->
-<style>
-/* Pen-specific styles */
-html, body, section {
-height: 100%;
-}
-
-body {
-color: #000;
-font-family: sans-serif;
-font-size: 1.25rem;
-line-height: 150%;
-text-align: center;
-}
-
-
-div {
-display: flex;
-flex-direction: column;
-}
-
-h2 {
-font-size: 1.5rem;
-margin: 0 0 0.75rem 0;
-}
-
-/* Pattern styles */
-.container {
-display: flex;
-}
-
-.left-half {
-flex: 1;
-padding: 1rem;
-}
-
-.right-half {
-flex: 1;
-padding: 1rem;
-}
-</style>
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#">Logo</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="./videos.php">Video</a></li>
+        <li><a href="./channels.php">Channel</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="./main.html"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+  
 
 <?php
 
 $name = $_POST['name'];
-$server = "localhost";
-$user = "kguo";
-$pwd = "17417174";
-$db = "kguo_1";
-
-$conn = new mysqli($server, $user, $pwd, $db);
+include "utils.php";
 # the hashmap like structure for projecting different attribute name of 'user_name' in different table
 $name_KV = [
 "User" => "name",
@@ -119,6 +166,12 @@ function like_info($usr_name, $table){
 					$query = $conn->query($video_query);
 					$result = $query->fetch_assoc();
 					echo key($result).":\t" . $result[key($result)] . "<br></br>";
+// 					$url = "https://www.youtube.com/embed/".$row[$id];
+// 					echo'   <a href=' .$url. '>     <input type="button" value="watch"/>   </a>';
+					echo '<form method="GET" action="videoDisplay.php">
+					 <input type="hidden" name="name" value='  .$name. '>
+      					  <input type="hidden" name="videoId" value='.$row[$id].'>
+  					  <input type="submit" value="watch"/> </form>';
 				}else{
 					echo key($row).":\t" . $row[key($row)] . "<br></br>";
 					# TODO
@@ -169,39 +222,67 @@ function subscribe_info($usr_name, $table){
 		}
 	}
 }
-
-
 ?>
 
-<!-- User title -->
-<h1>User: <?php echo $name ?></h1>
 
-<!-- Left Part(Infomation) -->
-<section class="container">
-<div class="left-half">
-	<h2>Personal Infomation</h2>
+
+
+
+<div class="header">
+  <h2>User: <?php echo $name ?></h2>
+</div>
+
+<div class="row">
+  <div class="column" style="background-color:#bbb;">	<h2>Personal Infomation</h2>
 	<!-- call the predefined function to echo stuff -->
 	<?php person_info($name, "User");?>
 	<!-- directly parse the name argument to the update interface for update-->
 	<form action="phpUpdateForm.php" method="post">
 	<input type ="hidden", name="name", value= <?php echo $name?>>
 	<button type ="submit">edit</button>
-	</form>
-</div>
-
-
-<!-- Right Part(Video) -->
-<div class="right-half">
-<article>
+	</form></div>
+  <div class="column" style="background-color:#bbb;">
+	<article>
 	<h2>Liked Video</h2>
 	<?php like_info($name, "likes");?>
+	<form action="user_video/user_video.php" method="post">
+		<input type ="hidden", name="name", value= <?php echo $name?>>
+		<input type ="hidden", name="operation", value= "add">
+		<button type ="submit">add</button>
+		</form>
+
+		<form action="user_video/user_video.php" method="post">
+		<input type ="hidden", name="name", value= <?php echo $name?>>
+		<input type ="hidden", name="operation", value= "delete">
+		<button type ="submit">delete</button>
+		</form>
 	<h2>Subscribed Channel</h2>
 	<?php subscribe_info($name, "Subscribe");?>
+	<form action="user_channel/user_channel.php" method="post">
+		<input type ="hidden", name="name", value= <?php echo $name?>>
+		<input type ="hidden", name="operation", value= "add">
+		<button type ="submit">add</button>
+		</form>
+
+		<form action="user_channel/user_channel.php" method="post">
+		<input type ="hidden", name="name", value= <?php echo $name?>>
+		<input type ="hidden", name="operation", value= "delete">
+		<button type ="submit">delete</button>
+		</form>
 </article>
+	</div>
+ 
 </div>
-</secion>
 
+<footer class="container-fluid text-center">
+  <p>Footer Text</p>
+</footer>
 
-
-</html>
 </body>
+</html>
+
+
+
+
+
+

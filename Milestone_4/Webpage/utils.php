@@ -13,6 +13,9 @@ if($conn->connect_error) {
 
 
 function db_query($query){
+    // Args: Take in a sql type query
+    // Output: a array which every element is a row and element is another array which element corresponds to different attribute
+
     global $conn;
 
     $result = array();

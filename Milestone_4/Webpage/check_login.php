@@ -23,7 +23,7 @@ if ($_POST) {
 <!-- go to interface -->
 <?php if ($login_success): ?>
     <?php if ($id == "admin"): ?>
-	<form action="admin_interface.php" id="goto_admin" method="post">
+	<form action="./admin/admin_interface.php" id="goto_admin" method="post">
             <input type ="hidden", name="name", value= <?php echo $id?>>
         </form>
         <script type="text/javascript">

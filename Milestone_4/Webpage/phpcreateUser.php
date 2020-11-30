@@ -26,15 +26,13 @@ if($conn->connect_error){
 
 $sql = "INSERT INTO User ". "(name, First_name, Last_name, password) ". "VALUES ( '$name','$First_name','$Last_name', $Password )";
 
-if ($name == "admin") {
-	echo "Need authorization to create admin user"
+
+if ($conn->query($sql) === TRUE) {
+  echo "New record created successfully";
 } else {
-	if ($conn->query($sql) === TRUE) {
-  		echo "New record created successfully";
-	} else {
-  		echo "Error: " . $sql . "<br>" . $conn->error;
-	}
+  echo "Error: " . $sql . "<br>" . $conn->error;
 }
+
 $conn->close();
 
 ?>
