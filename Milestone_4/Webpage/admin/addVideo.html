@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+
+<html>
+<body>
+
+<h2> Please enter information of the video to be added: </h2> <br> 
+
+<form action="phpAddVideo.php" method="POST">
+Video ID: <input type="text" name="vid"><br>
+Title: <input type="text" name="title"><br>
+Channel ID: <input type="number" name="cid"><br>
+Publish date: <input type="date" name="pdate" value="<?php echo date('Y-m-d'); ?>"><br>
+Views: <input type="number" name="view" value=0><br>
+
+<input type="submit">
+</form>
+
+</body>
+</html>

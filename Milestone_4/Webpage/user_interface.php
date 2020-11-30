@@ -281,9 +281,3 @@ function subscribe_info($usr_name, $table){
 
 </body>
 </html>
-
-
-
-
-
-

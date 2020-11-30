@@ -22,13 +22,23 @@ if ($_POST) {
 
 <!-- go to interface -->
 <?php if ($login_success): ?>
-    <form action="user_interface.php" id="goto_Demo" method="post">
-        <input type ="hidden", name="name", value= <?php echo $id?>>
-    </form>
+    <?php if ($id == "admin"): ?>
+	<form action="./admin/admin_interface.php" id="goto_admin" method="post">
+            <input type ="hidden", name="name", value= <?php echo $id?>>
+        </form>
+        <script type="text/javascript">
+            document.getElementById("goto_admin").submit();
+        </script>
+	
+    <?php else: ?>
+    	<form action="user_interface.php" id="goto_Demo" method="post">
+            <input type ="hidden", name="name", value= <?php echo $id?>>
+    	</form>
+    	<script type="text/javascript">
+            document.getElementById("goto_Demo").submit();
+    	</script>
+    <?php endif; ?>
 
-    <script type="text/javascript">
-        document.getElementById("goto_Demo").submit();
-    </script>
 <?php else: ?>
     <p>Wrong Username or Passwoard</p><br>
     <a href="./user_login.html">go back to login page</a><br>
