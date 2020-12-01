@@ -140,7 +140,7 @@ function all_channel() {
   </div>
   <div class="column1">
 	<h2>Videos List</h2>
-	<form method="POST" action="addVideo.html">
+	<form method="POST" action="addVideo.php">
 	    <button type="submit">add video</button>
         </form><br>
 	<?php all_video();?>

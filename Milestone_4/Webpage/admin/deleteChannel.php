@@ -3,7 +3,7 @@
 <body>
 
 <?php
-include "utils.php";
+include "../utils.php";
 $cid = $_POST['cid'];
 
 $sql = "DELETE FROM Channel WHERE id='$cid'";

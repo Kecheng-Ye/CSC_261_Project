@@ -9,7 +9,7 @@ if ($_POST) {
     # do query
     $id = $_POST["id"];
     $pwd = $_POST["pwd"];
-    $query = "SELECT * FROM User WHERE name = \"$id\" AND password = $pwd ";
+    $query = "SELECT * FROM User WHERE name = \"$id\" AND password = \"$pwd\" ";
     $result = db_query($query);
     
     if(count($result) > 0){
