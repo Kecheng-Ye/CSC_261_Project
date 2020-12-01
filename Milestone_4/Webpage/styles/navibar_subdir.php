@@ -2,6 +2,16 @@
 <html>
 <body>
 
+<?php 
+function subscribe_info($name_a, $name_b){
+    if(strlen($name_a) == 0){
+        return $name_b;
+    }else{
+        return $name_a;
+    }
+}
+?>
+
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -26,7 +36,7 @@
             <li>
                 <form id="form1" action="../user_interface.php" method="post">
                     <a href="javascript:;" onclick="document.getElementById('form1').submit();">Personal Info</a>
-                        <input type ="hidden", name="name", value= <?php echo $name?>>
+                        <input type ="hidden", name="name", value= <?php echo subscribe_info($name, $usr_name)?>>
                 </form>
             </li>
         <?php endif; ?>

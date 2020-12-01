@@ -22,7 +22,9 @@ include "../jscript/script.php";
   </script>
 </head>
 
-<?php include "../styles/navibar_subdir.php"?>
+<?php 
+include "../styles/navibar_subdir.php";
+?>
 
 
 <table style="width:100%">  
