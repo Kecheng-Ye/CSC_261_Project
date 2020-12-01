@@ -73,7 +73,7 @@ mysqli_close($conn);
 </html>
  -->
 	
-</div>
+
 <div include-html="./styles/footer.html"></div>
 
  <script>
