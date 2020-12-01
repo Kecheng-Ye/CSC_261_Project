@@ -18,7 +18,7 @@ if ($conn->query($sql)) {
 mysqli_close($conn);
 ?>
 
-<br>
-<a href="./admin_interface.php">go back to admin page</a>
+<br><br>
+<a href="./admin_interface.php">Back to admin page</a>
 </body>
 </html>
