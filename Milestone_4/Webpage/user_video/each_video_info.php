@@ -27,14 +27,14 @@ $video_id = $_POST['video_id'];
                    <td>%s</td>\n
                    <td>
                         <form action=\"video_operation.php\" method=\"post\">\n
-                        <input type =\"hidden\", name=\"User_name\", value= \"$usr_name\">\n
+                        <input type =\"hidden\", name=\"name\", value= \"$usr_name\">\n
                         <input type =\"hidden\", name=\"video_id\", value= %s>\n
                         <input type =\"hidden\", name=\"action\", value= %s>\n
                         <button type=\"submit\">%s</button>\n
                         </form>
 
-                        <form action=\"\" method=\"post\">\n
-                        <input type =\"hidden\", name=\"User_name\", value= \"$usr_name\">\n
+                        <form action=\"../videoDisplay.php\" method=\"GET\">\n
+                        <input type =\"hidden\", name=\"name\", value= \"$usr_name\">\n
                         <input type =\"hidden\", name=\"video_id\", value= %s>\n
                         <button type=\"submit\">view</button>\n
                         </form>

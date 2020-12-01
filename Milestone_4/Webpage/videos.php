@@ -4,10 +4,12 @@
 <body>
 
 <?php
-$server = "localhost";
-$user = "kguo";
-$pwd = "17417174";
-$db = "kguo_1";
+// $server = "localhost";
+// $user = "kguo";
+// $pwd = "17417174";
+// $db = "kguo_1";
+
+include "utils.php";
 
 $conn = new mysqli($server, $user, $pwd, $db);
 

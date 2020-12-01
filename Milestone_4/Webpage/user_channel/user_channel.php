@@ -9,9 +9,20 @@ table, th, td {
 
 <?php
 include "../utils.php";
+include "jscript/script.php";
 $usr_name = $_POST['name'];
 $operation = $_POST['operation'];
 ?>
+
+<head>
+  <div include-html="./styles/header.html"></div> 
+  <title>Mini Youtube Database</title>
+  <script>
+	includeHTML();
+  </script>
+</head>
+
+
 
 
 <table style="width:100%">  

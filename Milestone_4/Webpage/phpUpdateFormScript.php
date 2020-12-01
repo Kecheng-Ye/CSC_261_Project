@@ -5,10 +5,12 @@ $First_name = $_POST["First_name"];
 $Last_name = $_POST["Last_name"];
 $Password = $_POST["Password"];
 
-$server = "localhost";
-$user = "kguo";
-$pwd = "17417174";
-$db = "kguo_1";
+// $server = "localhost";
+// $user = "kguo";
+// $pwd = "17417174";
+// $db = "kguo_1";
+
+include "utils.php";
 
 $conn = new mysqli($server, $user, $pwd, $db);
 

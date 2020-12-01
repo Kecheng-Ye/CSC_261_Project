@@ -1,34 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-<script>
-function includeHTML() { <!-- call this function at the end of head/body where "include" is used, if any -->
-  var z, i, elmnt, file, xhttp;
-  /*loop through a collection of all HTML elements:*/
-  z = document.getElementsByTagName("*");
-  for (i = 0; i < z.length; i++) {
-    elmnt = z[i];
-    /*search for elements with a certain atrribute:*/
-    file = elmnt.getAttribute("include-html");
-    if (file) {
-      /*make an HTTP request using the attribute value as the file name:*/
-      xhttp = new XMLHttpRequest();
-      xhttp.onreadystatechange = function() {
-        if (this.readyState == 4) {
-          if (this.status == 200) {elmnt.innerHTML = this.responseText;}
-          if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
-          /*remove the attribute, and call this function once more:*/
-          elmnt.removeAttribute("include-html");
-          includeHTML();
-        }
-      }      
-      xhttp.open("GET", file, true);
-      xhttp.send();
-      /*exit the function:*/
-      return;
-    }
-  }
-};
-</script>
+<?php include "jscript/script.php"?>
+
 
 <head>
   <div include-html="./styles/header.html"></div> 
@@ -39,14 +12,10 @@ function includeHTML() { <!-- call this function at the end of head/body where "
 </head>
 
 <body>
-<div include-html="./styles/navibar_main.html"></div>
+<div include-html="./styles/navibar_main.php"></div>
 <div class="container-fluid text-center">    
   <div class="row content">
     <div class="col-sm-2 sidenav">
-      <!--
-      <p><a href="#">Link</a></p>
-      <p><a href="#">Link</a></p>
-      <p><a href="#">Link</a></p> -->
     </div>
     <div class="col-sm-8 text-left"> 
       <h1>Welcome</h1>

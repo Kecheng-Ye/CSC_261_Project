@@ -11,7 +11,18 @@ table, th, td {
 include "../utils.php";
 $usr_name = $_POST['name'];
 $operation = $_POST['operation'];
+include "../jscript/script.php";
 ?>
+
+<head>
+  <div include-html="../styles/header.html"></div> 
+  <title>Mini Youtube Database</title>
+  <script>
+	includeHTML();
+  </script>
+</head>
+
+<?php include "../styles/navibar_subdir.php"?>
 
 
 <table style="width:100%">  
@@ -26,7 +37,7 @@ $operation = $_POST['operation'];
                    <td>%s</td>\n
                    <td>
                         <form action=\"video_operation.php\" method=\"post\">\n
-                        <input type =\"hidden\", name=\"User_name\", value= \"$usr_name\">\n
+                        <input type =\"hidden\", name=\"name\", value= \"$usr_name\">\n
                         <input type =\"hidden\", name=\"video_id\", value= %s>\n
                         <input type =\"hidden\", name=\"action\", value= %s>\n
                         <button type=\"submit\">%s</button>\n
@@ -59,3 +70,9 @@ $operation = $_POST['operation'];
     }
     ?>
 </table>
+
+<div include-html="../styles/footer.html"></div>
+
+ <script>
+  includeHTML();
+</script>

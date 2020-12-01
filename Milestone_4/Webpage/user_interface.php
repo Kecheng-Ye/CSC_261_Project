@@ -1,115 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <title>Mini-Youtube</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-  <style>
-    /* Remove the navbar's default margin-bottom and rounded borders */ 
-    .navbar {
-      margin-bottom: 0;
-      border-radius: 0;
-    }
-    
-/*     /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
-/*     .row.content {height: 450px} */ */
-    
-    /* Set gray background color and 100% height */
-    .sidenav {
-      padding-top: 20px;
-      background-color: #f1f1f1;
-      height: 100%;
-    }
-	  
-	  
-/* Style the header */
-.header {
-background-color: #f1f1f1;
-padding: 30px;
-text-align: center;
-font-size: 35px;
-}
-
-
-/* Create three equal columns that floats next to each other */
-.column {
-  float: left;
-  width:50%;
-  padding: 30px;
-  height: 500px; /* Should be removed. Only for demonstration */
-
-}
-
-/* Clear floats after the columns */
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-	  
-    /* Set black background color, white text and some padding */
-    footer {
-	position: fixed;
-	left: 0;
-	bottom: 0;
-	width: 100%;
-	background-color: #555;
-	color: white;
-	padding: 15px;
-    }
-    
-    /* On small screens, set height to 'auto' for sidenav and grid */
-    @media screen and (max-width: 767px) {
-      .sidenav {
-        height: auto;
-        padding: 15px;
-      }
-      .row.content {height:auto;} 
-    }
-  </style>
-</head>
-<body>
-
-<nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>                        
-      </button>
-      <a class="navbar-brand" href="#">Logo</a>
-    </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="./videos.php">Video</a></li>
-        <li><a href="./channels.php">Channel</a></li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="./main.html"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
-      </ul>
-    </div>
-  </div>
-</nav>
-  
+<?php 
+include "jscript/script.php";
+include "utils.php";
+?>
 
 <?php
-
 $name = $_POST['name'];
-include "utils.php";
 # the hashmap like structure for projecting different attribute name of 'user_name' in different table
 $name_KV = [
 "User" => "name",
 "likes" => "User_name",
 "Subscribe" => "User_name",
-];
+];?>
 
 
+<head>
+  <div include-html="./styles/header.html"></div> 
+  <title>Mini Youtube Database</title>
+  <script>
+	includeHTML();
+  </script>
+</head>
+
+<?php include "styles/navibar_main.php"?>
+
+<?php
 /* This function will do a trivial query of User table and print all User information
 Args:  usr_name(string): the user name used to do query
 table(string): the table we are doing query                     */
@@ -146,42 +62,38 @@ Args:  usr_name(string): the user name used to do query
 function like_info($usr_name, $table){
 	global $name, $conn, $name_KV;
 
-	if($conn->connect_error) {
-		die("Connection failed: " . $conn->connect_error);
-	}else{
-		$sql_select = "SELECT * FROM $table WHERE $name_KV[$table] = \"$usr_name\"";
-		if($res = $conn->query($sql_select)) {
-		# one user may like a lot of videos
-			$count = 1;
-			while($row = $res->fetch_assoc()) {
-				echo $count. ".\t";
-				while($element = current($row)) {
-				if(key($row) == $name_KV[$table]){
-				}else if (key($row) == "Video_id"){ 
-					# since print out the video id will not be user friendly
-					# the function will do a second query to search for the Video title of that video id 
-					# and print out it
-					$id = key($row);
-					$video_query = "SELECT Title FROM Video WHERE id = " . "\"" . $row[$id] . "\"";
-					$query = $conn->query($video_query);
-					$result = $query->fetch_assoc();
-					echo key($result).":\t" . $result[key($result)] . "<br></br>";
-// 					$url = "https://www.youtube.com/embed/".$row[$id];
-// 					echo'   <a href=' .$url. '>     <input type="button" value="watch"/>   </a>';
-					echo '<form method="GET" action="videoDisplay.php">
-					 <input type="hidden" name="name" value='  .$name. '>
-      					  <input type="hidden" name="videoId" value='.$row[$id].'>
-  					  <input type="submit" value="watch"/> </form>';
-				}else{
-					echo key($row).":\t" . $row[key($row)] . "<br></br>";
-					# TODO
-				}
-				
-				next($row);
-				}
-				$count += 1;
+	$sql_select = "SELECT User_name, Video_id, Repeated_views, Comment FROM $table WHERE $name_KV[$table] = \"$usr_name\"";
+	$res = db_query($sql_select);
+	$count = 1;
+	# one user may like a lot of videos
+	while($row = current($res)) {
+		echo $count. ".\t";
+		while($element = current($row)) {
+
+			if(key($row) == $name_KV[$table]){
+			
+			}else if (key($row) == "Video_id"){ 
+				# since print out the video id will not be user friendly
+				# the function will do a second query to search for the Video title of that video id 
+				# and print out it
+				$id = key($row);
+				$video_query = "SELECT Title FROM Video WHERE id = " . "\"" . $row[$id] . "\"";
+				$query = $conn->query($video_query);
+				$result = $query->fetch_assoc();
+				echo key($result).":\t" . $result[key($result)] . "<br></br>";
+			}else{
+				echo key($row).":\t" . $row[key($row)] . "<br></br>";
 			}
+			next($row);
 		}
+		
+		echo '<form method="GET" action="videoDisplay.php">
+				<input type="hidden" name="name" value='  .$name. '>
+					<input type="hidden" name="videoId" value='.$row[$id].'>
+				<input type="submit" value="watch"/> </form>';
+
+		$count += 1;
+		next($res);
 	}
 }
 
@@ -275,9 +187,11 @@ function subscribe_info($usr_name, $table){
  
 </div>
 
-<footer class="container-fluid text-center">
-  <p>Footer Text</p>
-</footer>
+<div include-html="./styles/footer.html"></div>
+
+ <script>
+  includeHTML();
+</script>
 
 </body>
 </html>
