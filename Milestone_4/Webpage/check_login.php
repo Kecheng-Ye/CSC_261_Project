@@ -41,5 +41,5 @@ if ($_POST) {
 
 <?php else: ?>
     <p>Wrong Username or Passwoard</p><br>
-    <a href="./user_login.html">go back to login page</a><br>
+    <a href="./LoginRegistrationForm/index.html">go back to login page</a><br>
 <?php endif; ?>
