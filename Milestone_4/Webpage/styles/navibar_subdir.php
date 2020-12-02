@@ -55,7 +55,8 @@ function subscribe_info($name_a, $name_b){
         <?php if(strlen($name) == 0 and strlen($usr_name) == 0): ?>
 
         <li>
-            <form id="form5" action="../user_login.html" >
+<!--             <form id="form5" action="../user_login.html" > -->
+                  <form id="form5" action="../LoginRegistrationForm/index.html" >
                 <a href="javascript:;" onclick="document.getElementById('form5').submit();"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
             </form>
         </li>
