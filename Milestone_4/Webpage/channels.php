@@ -1,5 +1,17 @@
 <!DOCTYPE html>
 <html>
+	
+<?php include "jscript/script.php"?>
+
+
+<head>
+  <div include-html="./styles/header.html"></div> 
+  <title>Mini Youtube Database</title>
+  <script>
+	includeHTML();
+  </script>
+</head>
+	
 <body>
 
 <?php
@@ -20,6 +32,12 @@ if($res = $conn->query($sql_select)) {
 
 mysqli_close($conn);
 ?>
+	
+<div include-html="./styles/footer.html"></div>
+
+ <script>
+  includeHTML();
+</script>
 
 </body>
 </html>
