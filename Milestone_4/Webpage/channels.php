@@ -1,9 +1,8 @@
 <!DOCTYPE html>
+
 <html>
-	
 <?php include "jscript/script.php"?>
-
-
+	
 <head>
   <div include-html="./styles/header.html"></div> 
   <title>Mini Youtube Database</title>
@@ -11,9 +10,8 @@
 	includeHTML();
   </script>
 </head>
-	
 <body>
-
+	<div include-html="./styles/navibar_main.php"></div>
 <?php
 include "utils.php";
 	
