@@ -75,10 +75,10 @@ body {
 </style>
 </head>
 	
-<?php include "styles/navibar_main.php"?>
+
 	
 <body>
-
+<div include-html="../styles/navibar_main.php"></div>
 <?php
 
 include "../utils.php";
@@ -172,7 +172,7 @@ function all_channel() {
 </div>
 	
 	
-<div include-html="../styles/footer.html"></div>
+<div include-html="./styles/footer.html"></div>
 
  <script>
   includeHTML();
