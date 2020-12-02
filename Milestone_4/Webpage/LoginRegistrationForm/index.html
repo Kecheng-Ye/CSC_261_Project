@@ -35,12 +35,12 @@
                      <form action="../check_login.php" method="post">
                                 <h1>Log in</h1> 
                                 <p> 
-                                    <label for="username" class="uname" data-icon="u" > Your username </label>
-                                    <input id="username" name="username" required="required" type="text" placeholder="myusername"/>
+                                    <label for="uname" class="uname" data-icon="u" > Your username </label>
+                                    <input id="username" name="id" required="required" type="text" placeholder="myusername"/>
                                 </p>
                                 <p> 
-                                    <label for="password" class="youpasswd" data-icon="p"> Your password </label>
-                                    <input id="password" name="password" required="required" type="password" placeholder="eg. X8df!90EO" /> 
+                                    <label for="psw" class="youpasswd" data-icon="p"> Your password </label>
+                                    <input id="password" name="pwd" required="required" type="password" placeholder="eg. X8df!90EO" /> 
                                 </p>
                                 <p class="keeplogin"> 
 									<input type="checkbox" name="loginkeeping" id="loginkeeping" value="loginkeeping" /> 
@@ -61,27 +61,24 @@
                                 <h1> Sign up </h1> 
                                 <p> 
                                     <label for="usernamesignup" class="uname" data-icon="u">Your username</label>
-                                    <input id="usernamesignup" name="usernamesignup" required="required" type="text" placeholder="Lucylu99" />
+                                    <input id="usernamesignup" name="name" required="required" type="text" placeholder="Lucylu99" />
                                 </p>
 				    
 				<p> 
                                     <label for="usernamesignup" class="fname" data-icon="u">Your Firstname</label>
-                                    <input id="usernamesignup" name="usernamesignup" required="required" type="text" placeholder="Lucy" />
+                                    <input id="usernamesignup" name="First_name" required="required" type="text" placeholder="Lucy" />
                                 </p>
 				    
 				  <p> 
                                     <label for="usernamesignup" class="lname" data-icon="u">Your Lastname</label>
-                                    <input id="usernamesignup" name="usernamesignup" required="required" type="text" placeholder="Lu" />
+                                    <input id="usernamesignup" name="Last_name" required="required" type="text" placeholder="Lu" />
                                 </p>
 
                                 <p> 
                                     <label for="passwordsignup" class="youpasswd" data-icon="p">Your password </label>
-                                    <input id="passwordsignup" name="passwordsignup" required="required" type="password" placeholder="eg. X8df!90EO"/>
+                                    <input id="passwordsignup" name="Password" required="required" type="password" placeholder="eg. X8df!90EO"/>
                                 </p>
-                                <p> 
-                                    <label for="passwordsignup_confirm" class="youpasswd" data-icon="p">Please confirm your password </label>
-                                    <input id="passwordsignup_confirm" name="passwordsignup_confirm" required="required" type="password" placeholder="eg. X8df!90EO"/>
-                                </p>
+                   
                                 <p class="signin button"> 
 									<input type="submit" value="Sign up"/> 
 								</p>
