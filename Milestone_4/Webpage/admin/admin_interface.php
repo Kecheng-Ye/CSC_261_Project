@@ -172,7 +172,7 @@ function all_channel() {
 </div>
 	
 	
-<div include-html="./styles/footer.html"></div>
+<div include-html="../styles/footer.html"></div>
 
  <script>
   includeHTML();
