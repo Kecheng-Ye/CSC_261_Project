@@ -1,8 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+<?php 
+include "jscript/script.php";
+include "utils.php";
+?>
 	
 
 <head>
+	
+	 <div include-html="../styles/header.html"></div> 
+  <title>Mini Youtube Database</title>
+  <script>
+	includeHTML();
+  </script>
+	
+	
+	
+	
 <title>mini-youtube</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -60,6 +74,9 @@ body {
 }
 </style>
 </head>
+	
+<?php include "styles/navibar_main.php"?>
+	
 <body>
 
 <?php
@@ -153,6 +170,13 @@ function all_channel() {
         <?php all_channel();?>
   </div>
 </div>
+	
+	
+<div include-html="./styles/footer.html"></div>
+
+ <script>
+  includeHTML();
+</script>
 
 </body>
 </html>
