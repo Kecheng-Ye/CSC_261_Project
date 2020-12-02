@@ -11,6 +11,14 @@
   </script>
 </head>
 <body>
+	<table>
+<tr>
+    <th>Video ID</th>
+    <th>Title</th>
+    <th>Publish date</th>
+    <th>Views</th>
+  </tr>
+
 	
 	<div include-html="./styles/navibar_main.php"></div>
 
@@ -31,7 +39,14 @@ if($conn->connect_error) {
 $sql_select = "SELECT * FROM Video";
 if($res = $conn->query($sql_select)) {
 	while($row = $res->fetch_assoc()) {
-		echo "Video ID: " . $row["id"] . "    Title: " . $row["Title"] . "  Channel_ID: " . $row["Channel_id"] . "    Publish date: " . $row["Publish_date"] . "        Views: " . $row["Views"] . "<br>";
+// 		echo "Video ID: " . $row["id"] . "    Title: " . $row["Title"] . "  Channel_ID: " . $row["Channel_id"] . "    Publish date: " . $row["Publish_date"] . "        Views: " . $row["Views"] . "<br>";
+	 echo " <tr>";
+   echo " <td>" .$row["id"]."</td>";
+   echo "<td>" . $row["Title"] ."</td>";
+   echo " <td>". $row["Channel_id"]."</td>";
+echo " <td>".$row["Publish_date"]."</td>";
+echo " <td>". $row["Views"] ."</td>";
+ echo " </tr>";
 	}
 }
 
@@ -44,6 +59,6 @@ mysqli_close($conn);
   includeHTML();
 </script>
 
-
+</table>
 </body>
 </html>
