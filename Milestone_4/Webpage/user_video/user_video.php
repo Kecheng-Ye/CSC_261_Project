@@ -1,18 +1,6 @@
-<style>
-table, th, td {
-    border: 1px solid black;
-    border-collapse: collapse;
-    padding: 15px;
-    background-color: #f1f1c1;
-}
-</style>
-
-<?php
-include "../utils.php";
-$usr_name = $_POST['name'];
-$operation = $_POST['operation'];
-include "../jscript/script.php";
-?>
+<!DOCTYPE html>
+<html>
+<?php include "../jscript/script.php"?>
 
 <head>
   <div include-html="../styles/header.html"></div> 
@@ -20,21 +8,49 @@ include "../jscript/script.php";
   <script>
 	includeHTML();
   </script>
+	
+	
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
 </head>
 
-<?php 
-include "../styles/navibar_subdir.php";
-?>
 
 
-<table style="width:100%">  
+<body>
+<table>
     <tr>
         <th>Video Name</th>
         <th>Operation</th>
-    </tr>
+    </tr>	
 
-    <?php
-    // the format of every row 
+<?php
+include "../utils.php";
+$usr_name = $_POST['name'];
+$operation = $_POST['operation'];
+?>
+
+
+<?php 
+include "../styles/navibar_subdir.php"
+?>
+
+<?php
+    # the format of every row 
     $format = "<tr>\n
                    <td>%s</td>\n
                    <td>
@@ -50,6 +66,8 @@ include "../styles/navibar_subdir.php";
                         <input type =\"hidden\", name=\"videoId\", value= %s>\n
                         <button type=\"submit\">view</button>\n
                         </form>
+
+
                    </td>\n
                </tr>";
     
@@ -63,18 +81,24 @@ include "../styles/navibar_subdir.php";
 
     $result = db_query($video_id_select);
 
-    while($element = current($result)){
+    while($element = current($result))
+    {
         $video_id = $element["id"];
         $video_name = $element["Title"];
         
-        printf($format, $video_name, $video_id, $operation, $operation, $video_id);   
+        printf($format, $video_name, $video_id, $operation, $operation, $video_id, $video_id);   
         next($result);
     }
     ?>
+
 </table>
+</body>
+
 
 <div include-html="../styles/footer.html"></div>
 
  <script>
   includeHTML();
 </script>
+
+</html>

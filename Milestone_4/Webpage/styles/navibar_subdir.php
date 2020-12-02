@@ -25,29 +25,29 @@ function subscribe_info($name_a, $name_b){
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
         <?php if(strlen($name) == 0 and strlen($usr_name) == 0): ?>
-
             <li>
-                <form id="form0" action="../main.php" >
-                    <a href="javascript:;" onclick="document.getElementById('form0').submit();">Home</a>
+                <form id="form_0" action="../main.php" >
+                    <a href="javascript:;" onclick="document.getElementById('form_0').submit();">Home</a>
                 </form>
             </li>
 
         <?php else: ?>
+            
             <li>
-                <form id="form1" action="../user_interface.php" method="post">
-                    <a href="javascript:;" onclick="document.getElementById('form1').submit();">Personal Info</a>
+                <form id="form_7" action="../main.php" method="post">
+                    <a href="javascript:;" onclick="document.getElementById('form_7').submit();">Personal Info</a>
                         <input type ="hidden", name="name", value= <?php echo subscribe_info($name, $usr_name)?>>
                 </form>
             </li>
         <?php endif; ?>
         <li>
-            <form id="form2" action="../videos.php" >
-                <a href="javascript:;" onclick="document.getElementById('form2').submit();">Videos</a>
+            <form id="form_2" action="../videos.php" >
+                <a href="javascript:;" onclick="document.getElementById('form_2').submit();">Videos</a>
             </form>
         </li>
         <li>
-            <form id="form3" action="../channels.php" >
-                <a href="javascript:;" onclick="document.getElementById('form3').submit();">Channels</a>
+            <form id="form_3" action="../channels.php" >
+                <a href="javascript:;" onclick="document.getElementById('form_3').submit();">Channels</a>
             </form>
         </li>
       </ul>
@@ -55,16 +55,16 @@ function subscribe_info($name_a, $name_b){
         <?php if(strlen($name) == 0 and strlen($usr_name) == 0): ?>
 
         <li>
-<!--             <form id="form5" action="../user_login.html" > -->
-                  <form id="form5" action="../LoginRegistrationForm/index.html" >
-                <a href="javascript:;" onclick="document.getElementById('form5').submit();"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+<!--             <form id="form_5" action="../user_login.html" > -->
+                  <form id="form_5" action="../LoginRegistrationForm/index.html" >
+                <a href="javascript:;" onclick="document.getElementById('form_5').submit();"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
             </form>
         </li>
 
         <?php else: ?>
         <li>
-            <form id="form6" action="../main.php">
-                <a href="javascript:;" onclick="document.getElementById('form6').submit();"><span class="glyphicon glyphicon-log-in"></span> Logout</a>
+            <form id="form_6" action="../main.php">
+                <a href="javascript:;" onclick="document.getElementById('form_6').submit();"><span class="glyphicon glyphicon-log-in"></span> Logout</a>
             </form>
         </li>
 

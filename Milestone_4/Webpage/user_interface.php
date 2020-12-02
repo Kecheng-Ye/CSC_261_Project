@@ -186,12 +186,12 @@ function subscribe_info($usr_name, $table){
 	</div>
  
 </div>
-
+<!-- 
 <div include-html="./styles/footer.html"></div>
 
  <script>
   includeHTML();
-</script>
+</script> -->
 
 </body>
 </html>

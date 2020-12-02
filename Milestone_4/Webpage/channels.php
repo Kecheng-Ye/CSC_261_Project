@@ -41,6 +41,8 @@ tr:nth-child(even) {
   </tr>
 
 	<div include-html="./styles/navibar_main.php"></div>
+
+
 <?php
 include "utils.php";
 	

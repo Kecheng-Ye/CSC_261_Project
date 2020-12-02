@@ -1,3 +1,14 @@
+<!DOCTYPE html>
+<html>
+<?php include "../jscript/script.php"?>
+
+<head>
+  <div include-html="../styles/header.html"></div> 
+  <title>Mini Youtube Database</title>
+  <script>
+	includeHTML();
+  </script>
+
 <style>
 body {
   font-family: Arial, Helvetica, sans-serif;
@@ -10,23 +21,20 @@ body {
 /* Create a column layout with Flexbox */
 .row {
   display: flex;
+  padding: 0px;
+  border: 20px
 }
 
 /* Left column (menu) */
 .left {
   flex: 35%;
-  padding: 15px 0;
+  padding: 15px ;
 }
 
 .left h2 {
-  padding-left: 8px;
+  padding-left: 10px;
 }
 
-/* Right column (page content) */
-.right {
-  flex: 65%;
-  padding: 15px;
-}
 
 /* Style the search box */
 #mySearch {
@@ -39,8 +47,8 @@ body {
 /* Style the navigation menu inside the left column */
 #myMenu {
   list-style-type: none;
-  padding: 0;
-  margin: 0;
+  padding: 10;
+  margin: 10;
 }
 
 #myMenu li a {
@@ -53,17 +61,17 @@ body {
 #myMenu li a:hover {
   background-color: #eee;
 }
-</style
-
-
-
 </style>
+</head>
 
+<body>
 <?php
 include "../utils.php";
 $usr_name = $_POST['name'];
 $operation = $_POST['operation'];
 ?>
+
+<?php include "../styles/navibar_subdir.php"?>
 
 <div class="row">
     <div class="left" style="background-color:#bbb;">
@@ -72,10 +80,9 @@ $operation = $_POST['operation'];
 
         <ul id="myMenu">
             <?php
-
                 $format = " <li style=\"display:none\">
-                            <form id=\"form1\" action=\"each_video_info.php\" method=\"post\">
-                                <a href=\"javascript:;\" onclick=\"document.getElementById('form1').submit();\">%s</a>
+                            <form id=\"form%s\" action=\"each_video_info.php\" method=\"get\">
+                                <a href=\"javascript:;\" onclick=\"document.getElementById('form%s').submit();\">%s</a>
                                 <input type =\"hidden\", name=\"name\", value= \"$usr_name\">
                                 <input type =\"hidden\", name=\"video_id\", value= %s>
                                 <input type =\"hidden\", name=\"operation\", value= %s>
@@ -90,26 +97,25 @@ $operation = $_POST['operation'];
                     $video_id = $element["id"];
                     $video_name = $element["Title"];
                     
-                    printf($format, $video_name, $video_id, $operation);   
+                    printf($format, $video_name, $video_name, $video_name, $video_id, $operation);   
                     next($result);
                 }
             ?>
         </ul>
-        <br></br>
+        <br>
         <form action="user_video.php" method="post">
             <input type ="hidden", name="name", value= <?php echo $usr_name?>>
             <input type ="hidden", name="operation", value= "add">
             <button type="submit">View All</button>
         </form>
-
-        <form action="../User_Demo.php" id="goto_Demo" method="post">
-            <input type ="hidden", name="name", value= <?php echo $usr_name?>>
-            <button type="submit">Back</button>
-        </form>
     </div>
-    
+</body>
 
+<div include-html="../styles/footer.html"></div>
 
+ <script>
+  includeHTML();
+</script>
 
 <script>
 function myFunction() {
@@ -134,3 +140,7 @@ function myFunction() {
 	}
 }
 </script>
+
+</html>  
+
+
