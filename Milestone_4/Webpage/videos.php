@@ -15,6 +15,7 @@
 <tr>
     <th>Video ID</th>
     <th>Title</th>
+  <th>Channel id</th>
     <th>Publish date</th>
     <th>Views</th>
   </tr>
