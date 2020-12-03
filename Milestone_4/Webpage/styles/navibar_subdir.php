@@ -34,7 +34,7 @@ function subscribe_info($name_a, $name_b){
         <?php else: ?>
             
             <li>
-                <form id="form_7" action="../main.php" method="post">
+                <form id="form_7" action="../user_interface.php" method="post">
                     <a href="javascript:;" onclick="document.getElementById('form_7').submit();">Personal Info</a>
                         <input type ="hidden", name="name", value= <?php echo subscribe_info($name, $usr_name)?>>
                 </form>

@@ -9,15 +9,17 @@
   </script>
 </head>
 <body>
-	<div include-html="./styles/navibar_main.php"></div>
 
   
  <?php
 include "utils.php";
 $videoId = $_GET["videoId"];
 $name = $_GET["name"];
+?>
 
+<?php include "./styles/navibar_main.php" ?>
 
+<?php
 $conn = new mysqli($server, $user, $pwd, $db);
 
 if($conn->connect_error){

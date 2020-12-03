@@ -45,7 +45,7 @@ $operation = $_POST['operation'];
 ?>
 
 
-<?php 
+<?php  
 include "../styles/navibar_subdir.php"
 ?>
 
