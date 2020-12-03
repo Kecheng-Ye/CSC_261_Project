@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+	<?php include "jscript/script.php"?>
 	<head>
   <div include-html="./styles/header.html"></div> 
   <title>Mini Youtube Database</title>
