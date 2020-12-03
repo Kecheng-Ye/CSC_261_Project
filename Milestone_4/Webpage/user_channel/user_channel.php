@@ -1,11 +1,40 @@
+<!DOCTYPE html>
+<html>
+<?php include "../jscript/script.php"?>
+
+<head>
+  <div include-html="../styles/header.html"></div> 
+  <title>Mini Youtube Database</title>
+  <script>
+	includeHTML();
+  </script>
+
 <style>
-table, th, td {
-    border: 1px solid black;
-    border-collapse: collapse;
-    padding: 15px;
-    background-color: #f1f1c1;
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
 }
 </style>
+</head>
+
+<body>
+<table style="width:100%">  
+    <tr>
+        <th>Channel Name</th>
+        <th>Operation</th>
+    </tr>	
+
 
 <?php
 include "../utils.php";
@@ -14,22 +43,10 @@ $usr_name = $_POST['name'];
 $operation = $_POST['operation'];
 ?>
 
-<head>
-  <div include-html="./styles/header.html"></div> 
-  <title>Mini Youtube Database</title>
-  <script>
-	includeHTML();
-  </script>
-</head>
+<?php  
+include "../styles/navibar_subdir.php"
+?>
 
-
-
-
-<table style="width:100%">  
-    <tr>
-        <th>Channel Name</th>
-        <th>Operation</th>
-    </tr>
 
     <?php
     // the format of every row 
@@ -74,3 +91,13 @@ $operation = $_POST['operation'];
     }
     ?>
 </table>
+</body>
+
+
+<div include-html="../styles/footer.html"></div>
+
+ <script>
+  includeHTML();
+</script>
+
+</html>

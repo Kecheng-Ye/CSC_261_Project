@@ -90,7 +90,8 @@ function like_info($usr_name, $table){
 		echo '<form method="GET" action="videoDisplay.php">
 				<input type="hidden" name="name" value='  .$name. '>
 					<input type="hidden" name="videoId" value='.$row[$id].'>
-				<input type="submit" value="watch"/> </form>';
+				<input type="submit" value="watch"/> </form>
+				<br>';
 
 		$count += 1;
 		next($res);
@@ -163,6 +164,7 @@ function subscribe_info($usr_name, $table){
 		<button type ="submit">add</button>
 		</form>
 
+
 		<form action="user_video/user_video.php" method="post">
 		<input type ="hidden", name="name", value= <?php echo $name?>>
 		<input type ="hidden", name="operation", value= "delete">
@@ -171,11 +173,13 @@ function subscribe_info($usr_name, $table){
 	<!-- subscriber -->
 	<h2>Subscribed Channel</h2>
 	<?php subscribe_info($name, "Subscribe");?>
+	<br></br>
 		<form action="user_channel/user_channel.php" method="post">
 		<input type ="hidden", name="name", value= <?php echo $name?>>
 		<input type ="hidden", name="operation", value= "add">
 		<button type ="submit">add</button>
 		</form>
+
 
 		<form action="user_channel/user_channel.php" method="post">
 		<input type ="hidden", name="name", value= <?php echo $name?>>

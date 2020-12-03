@@ -1,11 +1,34 @@
+<!DOCTYPE html>
+<html>
+<?php include "../jscript/script.php"?>
+
+<head>
+  <div include-html="../styles/header.html"></div> 
+  <title>Mini Youtube Database</title>
+  <script>
+	includeHTML();
+  </script>
+
 <style>
-table, th, td {
-    border: 1px solid black;
-    border-collapse: collapse;
-    padding: 15px;
-    background-color: #f1f1c1;
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
 }
 </style>
+</head>
+
+<body>
 
 <?php
 include "../utils.php";
@@ -19,8 +42,11 @@ $result = db_query($query);
 $channel_name = current($result)["Title"]
 ?>
 
-<h1>Channel Info: <?php echo $channel_name ?></h1>
+<?php  
+include "../styles/navibar_subdir.php"
+?>
 
+<h1>Channel Info: <?php echo $channel_name ?></h1>
 <table style="width:100%">  
     <tr>
         <th>Video Name</th>
@@ -54,12 +80,16 @@ $channel_name = current($result)["Title"]
     }
     ?>
 </table>
+</body>
 
-<form action="user_channel.php" method="post">
-    <input type ="hidden", name="name", value = <?php echo $usr_name?>>
-    <input type ="hidden", name="operation", value = <?php echo $operation?>>
-    <button type="submit">back</button>
-</form>
+
+<div include-html="../styles/footer.html"></div>
+
+ <script>
+  includeHTML();
+</script>
+
+</html>
 
 
 
