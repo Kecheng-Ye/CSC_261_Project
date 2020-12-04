@@ -61,6 +61,6 @@ $conn->close();
   includeHTML();
 </script>
 <br>
-<a href="./main.html">Return to main</a><br>	
+<a href="./main.php">Return to main</a><br>	
 </body>
 </html>
