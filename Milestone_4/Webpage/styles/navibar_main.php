@@ -33,11 +33,13 @@
         <li>
             <form id="form2" action="videos.php" >
                 <a href="javascript:;" onclick="document.getElementById('form2').submit();">Videos</a>
+                <input type ="hidden", name="name", value= <?php echo $name?>>
             </form>
         </li>
         <li>
             <form id="form3" action="channels.php" >
                 <a href="javascript:;" onclick="document.getElementById('form3').submit();">Channels</a>
+                <input type ="hidden", name="name", value= <?php echo $name?>>
             </form>
         </li>
       </ul>
