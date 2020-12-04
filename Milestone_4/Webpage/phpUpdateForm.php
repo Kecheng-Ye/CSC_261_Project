@@ -89,7 +89,12 @@ $conn->close();
     <div class="form-group">        
       <div class="col-sm-offset-2 col-sm-10">
         <button type="submit" class="btn btn-default">Submit</button>
-	    <a href="user_interface.php" class="w3-btn w3-black">go back to user interface</a>
+<!-- 	    <a href="user_interface.php" class="w3-btn w3-black">go back to user interface</a> -->
+	     
+	       <form action="user_interface.php" id="goto_Demo" method="post">
+        <input type ="hidden", name="name", value= <?php echo $name?>>
+         <button type="submit">go back</button> 
+</form>
       </div>
     </div>
   </form>
