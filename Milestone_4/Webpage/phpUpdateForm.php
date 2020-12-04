@@ -43,11 +43,17 @@ if ($result->num_rows > 0){
 	$Last_name = $row["Last_name"];
 	$Password = $row["password"];
 
-	echo
+// 	echo
 
-	"<html>
-	<body>
+// 	"<html>
+// 	<body>
+} else {
+		echo "Not Found";
+}
+$conn->close();
 
+?>
+	
 
 
 	
@@ -89,15 +95,15 @@ if ($result->num_rows > 0){
   </form>
 </div>
 
-	</body>
-	</html>";
+<!-- 	</body>
+	</html>"; -->
 
-	} else {
-		echo "Not Found";
-}
-$conn->close();
+// 	} else {
+// 		echo "Not Found";
+// }
+// $conn->close();
 
-?>
+// ?>
 	
 </body>
 
