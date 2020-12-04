@@ -38,7 +38,7 @@ $conn->close();
 
 ?>
 	<br><br>
-<a href="../index.html">Go to Login</a>
+<a href="../LoginRegistrationForm/index.html">Go to Login</a>
 	<div include-html="../styles/footer.html"></div>
 
  <script>
