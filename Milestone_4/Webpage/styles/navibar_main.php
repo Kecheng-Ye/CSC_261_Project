@@ -14,6 +14,15 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
+          <?php if(strlen($name) == 0 and strlen($usr_name) == 0): ?>
+        
+                    <li>
+                <form id="form0" action="main.php" >
+                    <a href="javascript:;" onclick="document.getElementById('form0').submit();">Home</a>
+                </form>
+            </li>
+        
+          <?php else: ?>
            <li>
             <form id="form2" action="videos.php" >
                 <a href="javascript:;" onclick="document.getElementById('form2').submit();">Videos</a>
@@ -26,6 +35,10 @@
                 <input type ="hidden", name="name", value= <?php echo $name?>>
             </form>
         </li>
+           <?php endif; ?>
+        
+        
+        
         <?php if(strlen($name) == 0 and strlen($usr_name) == 0): ?>
 
             <li>
