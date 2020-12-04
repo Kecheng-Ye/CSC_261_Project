@@ -59,7 +59,7 @@ $conn->close();
 	
 <div class="container">
   <h2>Please enter information to be updated:</h2>
-  <form action="phpAddVideo.php" method="POST">
+  <form action="phpUpdateFormScript.php" method="POST">
     <div class="form-group">
       <label class="control-label col-sm-2" for="vid">Name:</label>
       <div class="col-sm-10">
@@ -89,21 +89,13 @@ $conn->close();
     <div class="form-group">        
       <div class="col-sm-offset-2 col-sm-10">
         <button type="submit" class="btn btn-default">Submit</button>
-	    <a href="./admin_interface.php" class="w3-btn w3-black">go back to admin page</a>
+	    <a href="user_interface.php" class="w3-btn w3-black">go back to user interface</a>
       </div>
     </div>
   </form>
 </div>
 
-<!-- 	</body>
-	</html>"; -->
 
-// 	} else {
-// 		echo "Not Found";
-// }
-// $conn->close();
-
-// ?>
 	
 </body>
 
