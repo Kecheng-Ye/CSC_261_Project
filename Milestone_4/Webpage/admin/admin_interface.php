@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <?php 
-include "jscript/script.php";
-include "utils.php";
+include "./jscript/script.php";
+
 ?>
 	
 
