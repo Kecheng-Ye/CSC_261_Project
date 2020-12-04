@@ -1,8 +1,16 @@
    
 <!DOCTYPE html>
 <html>
+	<?php include "./jscript/script.php"?>
+	<head>
+  <div include-html="./styles/header.html"></div> 
+  <title>Mini Youtube Database</title>
+  <script>
+	includeHTML();
+  </script>
+		</head>
 <body>
-	 
+	 	<div include-html="../styles/navibar_main.php"></div>
 <?php
 
 include "../utils.php";
@@ -30,6 +38,11 @@ $conn->close();
 
 ?>
 	<br><br>
-<a href="../index.html">Go to Login/a>
+<a href="../index.html">Go to Login</a>
+	<div include-html="../styles/footer.html"></div>
+
+ <script>
+  includeHTML();
+</script>
 </body>
 </html>
