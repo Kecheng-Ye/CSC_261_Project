@@ -54,9 +54,7 @@ $conn->close();
 
 ?>
 
-	  <form action="user_interface.php" id="goto_Demo" method="post">
-        <input type ="hidden", name="name", value= <?php echo $name?>>
-         <button type="submit">go back</button> 
+	
 	
 
 
