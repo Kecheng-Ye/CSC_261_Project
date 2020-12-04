@@ -29,7 +29,7 @@
                         <input type ="hidden", name="name", value= <?php echo $name?>>
                 </form>
             </li>
-        <?php endif; ?>
+      
         <li>
             <form id="form2" action="videos.php" >
                 <a href="javascript:;" onclick="document.getElementById('form2').submit();">Videos</a>
@@ -42,6 +42,7 @@
                 <input type ="hidden", name="name", value= <?php echo $name?>>
             </form>
         </li>
+          <?php endif; ?>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <?php if(strlen($name) == 0 and strlen($usr_name) == 0): ?>
