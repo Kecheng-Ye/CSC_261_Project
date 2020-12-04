@@ -10,6 +10,7 @@
 	includeHTML();
   </script>
 </head>
+		<div include-html="./styles/navibar_main.php"></div>
 	<body>
 
 
