@@ -50,6 +50,7 @@ tr:nth-child(even) {
 // $db = "kguo_1";
 
 include "utils.php";
+$name = $_GET["name"];
 
 $conn = new mysqli($server, $user, $pwd, $db);
 
