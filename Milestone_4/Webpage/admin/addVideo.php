@@ -46,35 +46,6 @@ Views: <input type="number" name="view" value=0><br>
 <input type="submit">
 </form> -->
 
-<!-- <form action="phpAddVideo.php" method="POST">
-  <div class="form-group">
-    <label for="videoId">Video ID</label>
-    <input type="text" class="form-control" id="videoId" name="vid" aria-describedby="Help" placeholder="kgaO45SyaO4">
-    <small id="Help" class="form-text text-muted">Please enter a real youtube Id if you want to watch in our database.</small>
-  </div>
-  <div class="form-group">
-    <label for="title">Title</label>
-    <input type="text" class="form-control" id="title" name="title" placeholder="The New SpotMini">
-  </div>
- <div class="form-group">
-    <label for="channelId">Channel ID</label>
-    <select name="cid" required  class="form-control" id="channelId"> <?php channel_list(); ?></select> 
-  </div>
-  <div class="form-group">
-    <label for="pdate">Publish Date</label>
-    <input type="date" name="pdate" class="form-control" id="pdate" value="<?php echo date('Y-m-d'); ?>">>
-  </div>
-  <div class="form-group">
-    <label for="view">Views</label>
-    <input type="number" name="view" class="form-control" id="view" value=0>>
-  </div>
-  <div class="form-group form-check">
-    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-    <label class="form-check-label" for="exampleCheck1">Check me out</label>
-  </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
-</form> -->
-	
 	
 <div class="container">
   <h2>Please enter information of the video to be added:</h2>
@@ -100,7 +71,7 @@ Views: <input type="number" name="view" value=0><br>
     <div class="form-group">
       <label class="control-label col-sm-2" for="date">Publish Date:</label>
       <div class="col-sm-10">          
-       <input type="date" name="pdate" class="form-control" id="pdate" value="<?php echo date('Y-m-d'); ?>">>
+       <input type="date" name="pdate" class="form-control" id="pdate" value="<?php echo date('Y-m-d'); ?>">
       </div>
     </div>
 
@@ -108,6 +79,7 @@ Views: <input type="number" name="view" value=0><br>
     <div class="form-group">        
       <div class="col-sm-offset-2 col-sm-10">
         <button type="submit" class="btn btn-default">Submit</button>
+	    <a href="../main.php" class="w3-btn w3-black">return to main</a>
       </div>
     </div>
   </form>
