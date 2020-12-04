@@ -148,6 +148,10 @@ function all_channel() {
 <div class="header">
   <h2> Welcome Administrator </h2>
   <p> Please manage videos, channels and users on this page </p>
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<div class="w3-container">
+  <a href="../main.php" class="w3-btn w3-black">return to main</a>
+</div>
 </div>
 
 <div class="row">
