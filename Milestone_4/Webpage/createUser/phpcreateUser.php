@@ -22,12 +22,14 @@ $sql = "INSERT INTO User ". "(name, First_name, Last_name, password) ". "VALUES 
 if ($conn->query($sql) === TRUE) {
   echo "New record created successfully";
 } else {
-  echo "Error: " . $sql . "<br>" . $conn->error;
+//   echo "Error: " . $sql . "<br>" . $conn->error;
+	  echo "Channel ID already exists. Please check your input";
 }
 
 $conn->close();
 
 ?>
-	
+	<br><br>
+<a href="../index.html">Go to Login/a>
 </body>
 </html>
