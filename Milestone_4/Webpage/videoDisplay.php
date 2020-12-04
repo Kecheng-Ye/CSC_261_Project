@@ -28,7 +28,7 @@ if($conn->connect_error){
  
 
 $url = "https://www.youtube.com/embed/".$videoId;
-echo' <iframe width="420" height="315" src=' .$url. '> </iframe>';
+echo' <center><iframe width="420" height="315" src=' .$url. '> </iframe></center>';
 
 // check if the video liked by the user
 $check_like = "SELECT * FROM likes WHERE User_name = \"$name\" AND Video_id = \"$videoId\"";
@@ -61,7 +61,7 @@ $conn->close();?>
 
  <form action="user_interface.php" id="goto_Demo" method="post">
         <input type ="hidden", name="name", value= <?php echo $name?>>
-        <button type="submit">Click Me!</button>
+        <button type="submit">go back</button>
 </form>
  <div include-html="./styles/footer.html"></div>
 
