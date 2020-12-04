@@ -1,12 +1,18 @@
 <!DOCTYPE html>
 
 <html>
-	
+	<?php include "./jscript/script.php"?>
 <head>
   <meta charset="utf-8">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+	
+ <div include-html="./styles/header.html"></div> 
+  <title>Mini Youtube Database</title>
+  <script>
+	includeHTML();
+  </script>
 </head>
 
 <?php
@@ -27,7 +33,7 @@ function channel_list() {
 ?>
 
 <body>
-
+	<div include-html="../styles/navibar_main.php"></div>
 <!-- <h2> Please enter information of the video to be added: </h2> <br>  -->
 
 <!-- <form action="phpAddVideo.php" method="POST">
@@ -76,13 +82,13 @@ Views: <input type="number" name="view" value=0><br>
     <div class="form-group">
       <label class="control-label col-sm-2" for="vid">Video ID:</label>
       <div class="col-sm-10">
-        <input type="text" class="form-control" id="vid" placeholder="kgaO45SyaO4" name="vid">
+        <input type="text" class="form-control" id="vid" placeholder="kgaO45SyaO4" name="vid" required>
       </div>
     </div>
     <div class="form-group">
       <label class="control-label col-sm-2" for="title">Title:</label>
       <div class="col-sm-10">          
-        <input type="text" class="form-control" id="title" placeholder="The New SpotMini" name="title">
+        <input type="text" class="form-control" id="title" placeholder="The New SpotMini" name="title" required>
       </div>
     </div>
     <div class="form-group">
@@ -97,12 +103,7 @@ Views: <input type="number" name="view" value=0><br>
        <input type="date" name="pdate" class="form-control" id="pdate" value="<?php echo date('Y-m-d'); ?>">>
       </div>
     </div>
-<!--     <div class="form-group">
-      <label class="control-label col-sm-2" for="date">Views:</label>
-      <div class="col-sm-10">          
-       <input type="date" name="pdate" class="form-control" id="pdate" value="<?php echo date('Y-m-d'); ?>">>
-      </div>
-    </div> -->
+
 
     <div class="form-group">        
       <div class="col-sm-offset-2 col-sm-10">
@@ -111,8 +112,10 @@ Views: <input type="number" name="view" value=0><br>
     </div>
   </form>
 </div>
-	
-	
+	<div include-html="../styles/footer.html"></div>
+	 <script>
+  includeHTML();
+</script>
 </body>
 </html>
 
