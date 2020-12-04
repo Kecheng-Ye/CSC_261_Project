@@ -79,7 +79,7 @@ Views: <input type="number" name="view" value=0><br>
     <div class="form-group">        
       <div class="col-sm-offset-2 col-sm-10">
         <button type="submit" class="btn btn-default">Submit</button>
-	    <a href="./admin_interface.php" class="w3-btn w3-black">return to main</a>
+	    <a href="./admin_interface.php" class="w3-btn w3-black">go back to admin page</a>
       </div>
     </div>
   </form>
