@@ -37,11 +37,11 @@
         
         <?php if(strlen($name) == 0 and strlen($usr_name) == 0): ?>
 
-            <li>
+<!--             <li>
                 <form id="form0" action="main.php" >
                     <a href="javascript:;" onclick="document.getElementById('form0').submit();">Home</a>
                 </form>
-            </li>
+            </li> -->
 
         <?php else: ?>
             <li>
