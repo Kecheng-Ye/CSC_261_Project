@@ -53,13 +53,13 @@ Views: <input type="number" name="view" value=0><br>
     <div class="form-group">
       <label class="control-label col-sm-2" for="vid">Video ID:</label>
       <div class="col-sm-10">
-        <input type="text" class="form-control" id="vid" placeholder="kgaO45SyaO4" name="vid" required>
+        <input type="text" class="form-control" id="vid" placeholder="eg: kgaO45SyaO4" name="vid" required>
       </div>
     </div>
     <div class="form-group">
       <label class="control-label col-sm-2" for="title">Title:</label>
       <div class="col-sm-10">          
-        <input type="text" class="form-control" id="title" placeholder="The New SpotMini" name="title" required>
+        <input type="text" class="form-control" id="title" placeholder="eg: The New SpotMini" name="title" required>
       </div>
     </div>
     <div class="form-group">
