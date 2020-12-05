@@ -19,7 +19,7 @@
     </div>
     <div class="col-sm-8 text-left"> 
       <h1>Welcome</h1>
-      <p>This is our final project for CSC261. This mini-database systems allows you to add/delete/view your favorate videos/channelS. Please create an account by clicking the login on the top. You can log in as administrator to manage the users, videos and channels as well. We hope you find our website helpful!</p>
+      <p>This is our final project for CSC261. This mini-database systems allows you to add/delete/view your favorate videos/channels. Please create an account by clicking the login on the top. You can log in as administrator to manage the users, videos and channels as well. We hope you find our website helpful!</p>
       <hr>
       <h3>Don't have an account yet?</h3>
       <p>Click Login to create an account...You can also check out existing videos and channels without logging in!</p>
