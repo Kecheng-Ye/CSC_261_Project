@@ -19,10 +19,10 @@
     </div>
     <div class="col-sm-8 text-left"> 
       <h1>Welcome</h1>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+      <p>This is our final project for CSC261. This mini-database systems allows you to add/delete/view your favorate videos/channelS. Please create an account by clicking the login on the top. You can log in as administrator to manage the users, videos and channels as well. We hope you find our website helpful!</p>
       <hr>
-      <h3>Test</h3>
-      <p>Lorem ipsum...</p>
+      <h3>Don't have an account yet?</h3>
+      <p>Click Login to create an account...You can also check out existing videos and channels without logging in!</p>
     </div>
     <div class="col-sm-2 sidenav">
       <!-- <div class="well">
