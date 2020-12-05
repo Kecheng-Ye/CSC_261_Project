@@ -77,7 +77,7 @@ $conn->close();
     <div class="form-group">
       <label class="control-label col-sm-2" for="cid">Lastname:</label>
       <div class="col-sm-10">          
- <input type="text" class="form-control" placeholder="Enter firstname" name="Last_name" value="<?php $Last_name; ?>" required>
+ <input type="text" class="form-control" placeholder="Enter lastname" name="Last_name" value="<?php $Last_name; ?>" required>
       </div>
     </div>
     <div class="form-group">
