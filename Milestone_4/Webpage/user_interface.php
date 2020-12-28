@@ -146,7 +146,7 @@ function subscribe_info($usr_name, $table){
 </div>
 
 <div class="row">
-  <div class="column" style="background-color:#bbb;">	<h2>Personal Infomation</h2>
+  <div class="column" >	<h2>Personal Infomation</h2>
 	<!-- call the predefined function to echo stuff -->
 	<?php person_info($name, "User");?>
 	<!-- directly parse the name argument to the update interface for update-->
@@ -154,7 +154,7 @@ function subscribe_info($usr_name, $table){
 	<input type ="hidden", name="name", value= <?php echo $name?>>
 	<button type ="submit">edit</button>
 	</form></div>
-  <div class="column" style="background-color:#bbb;">
+  <div class="column" >
 	<article>
 	<h2>Liked Video</h2>
 	<?php like_info($name, "likes");?>

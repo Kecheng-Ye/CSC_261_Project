@@ -25,11 +25,11 @@ function subscribe_info($name_a, $name_b){
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
         <?php if(strlen($name) == 0 and strlen($usr_name) == 0): ?>
-            <li>
+<!--             <li>
                 <form id="form_0" action="../main.php" >
                     <a href="javascript:;" onclick="document.getElementById('form_0').submit();">Home</a>
                 </form>
-            </li>
+            </li> -->
 
         <?php else: ?>
             

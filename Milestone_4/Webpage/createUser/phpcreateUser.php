@@ -1,8 +1,16 @@
    
 <!DOCTYPE html>
 <html>
+	<?php include "./jscript/script.php"?>
+	<head>
+  <div include-html="./styles/header.html"></div> 
+  <title>Mini Youtube Database</title>
+  <script>
+	includeHTML();
+  </script>
+		</head>
 <body>
-	 
+	 	<div include-html="../styles/navibar_main.php"></div>
 <?php
 
 include "../utils.php";
@@ -22,12 +30,19 @@ $sql = "INSERT INTO User ". "(name, First_name, Last_name, password) ". "VALUES 
 if ($conn->query($sql) === TRUE) {
   echo "New record created successfully";
 } else {
-  echo "Error: " . $sql . "<br>" . $conn->error;
+//   echo "Error: " . $sql . "<br>" . $conn->error;
+	  echo "Channel ID already exists. Please check your input";
 }
 
 $conn->close();
 
 ?>
-	
+	<br><br>
+<a href="../LoginRegistrationForm/index.html">Go to Login</a>
+	<div include-html="../styles/footer.html"></div>
+
+ <script>
+  includeHTML();
+</script>
 </body>
 </html>

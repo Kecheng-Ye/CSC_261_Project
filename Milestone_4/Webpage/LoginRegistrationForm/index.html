@@ -36,6 +36,7 @@
                         <div id="login" class="animate form">
                      <form action="../check_login.php" method="post">
                                 <h1>Log in</h1> 
+			      <a href="../main.php">Back to main</a>	
                                 <p> 
                                     <label for="uname" class="uname" data-icon="u" > Your username </label>
                                     <input id="username" name="id" required="required" type="text" placeholder="myusername"/>
@@ -44,10 +45,10 @@
                                     <label for="psw" class="youpasswd" data-icon="p"> Your password </label>
                                     <input id="password" name="pwd" required="required" type="password" placeholder="eg. X8df!90EO" /> 
                                 </p>
-                                <p class="keeplogin"> 
+<!--                                 <p class="keeplogin"> 
 									<input type="checkbox" name="loginkeeping" id="loginkeeping" value="loginkeeping" /> 
 									<label for="loginkeeping">Keep me logged in</label>
-								</p>
+								</p> -->
                                 <p class="login button"> 
                                     <input type="submit" value="Login" /> 
 								</p>
@@ -55,12 +56,14 @@
 									Not a member yet ?
 									<a href="#toregister" class="to_register">Join us</a>
 								</p>
+			    
                             </form>
                         </div>
 
                         <div id="register" class="animate form">
                           <form action="../createUser/phpcreateUser.php" method="post">
                                 <h1> Sign up </h1> 
+				    <a href="../main.php">Back to main</a>	
                                 <p> 
                                     <label for="usernamesignup" class="uname" data-icon="u">Your username</label>
                                     <input id="usernamesignup" name="name" required="required" type="text" placeholder="Lucylu99" />
@@ -88,10 +91,12 @@
 									Already a member ?
 									<a href="#tologin" class="to_register"> Go and log in </a>
 								</p>
+				
                             </form>
                         </div>
-						
+					
                     </div>
+			
                 </div>  
             </section>
         </div>

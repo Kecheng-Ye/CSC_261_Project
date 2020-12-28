@@ -1,3 +1,19 @@
+<!DOCTYPE html>
+
+<html>
+<?php include "jscript/script.php"?>
+	
+<head>
+  <div include-html="./styles/header.html"></div> 
+  <title>Mini Youtube Database</title>
+  <script>
+	includeHTML();
+  </script>
+</head>
+		<div include-html="./styles/navibar_main.php"></div>
+	<body>
+
+
 <?php
 
 $name = $_POST["name"];
@@ -31,11 +47,20 @@ $conn->close();
 ?>
 
 
-<!DOCTYPE html>
 
-<html>
-<body>
+
+</body>
+</html>
+
+
+
+	
+<div include-html="./styles/footer.html"></div>
+
+ <script>
+  includeHTML();
+</script>
 <br>
-<a href="./main.html">Return to main</a><br>	
+<a href="./main.php">Return to main</a><br>	
 </body>
 </html>

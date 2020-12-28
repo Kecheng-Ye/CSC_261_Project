@@ -3,13 +3,17 @@
 <?php include "jscript/script.php"?>
 
 <head>
-  <div include-html="./styles/header.html"></div> 
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+	
+ <div include-html="./styles/header.html"></div> 
   <title>Mini Youtube Database</title>
   <script>
 	includeHTML();
   </script>
 </head>
-
 <body>
 <?php
 $name= $_POST["name"];
@@ -39,29 +43,64 @@ if ($result->num_rows > 0){
 	$Last_name = $row["Last_name"];
 	$Password = $row["password"];
 
-	echo
+// 	echo
 
-	"<html>
-	<body>
-
-	<form action='phpUpdateFormScript.php' method='post'>
-	Name: $name<br>
-	<input type='hidden' name='name' value='$name'>
-	Firstname: <input type='text' name='First_name' value='$First_name'><br>
-	Lastname: <input type='text' name='Last_name' value='$Last_name'><br>
-	Password: <input type='text' name='Password' value='$Password'><br>
-	<input type ='submit'>
-	</form>
-
-	</body>
-	</html>";
-
-	} else {
+// 	"<html>
+// 	<body>
+} else {
 		echo "Not Found";
 }
 $conn->close();
 
 ?>
+
+	
+	
+
+
+	
+<div class="container">
+  <h2>Please enter information to be updated:</h2>
+  <form action="phpUpdateFormScript.php" method="POST">
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="vid">Name:</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" placeholder="Enter Name" name="name" value="<?php $name; ?>" required>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="title">Firstname:</label>
+      <div class="col-sm-10">          
+        <input type="text" class="form-control" id="title" placeholder="Enter firstname" name="First_name" value = "<?php $First_name; ?>" required>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="cid">Lastname:</label>
+      <div class="col-sm-10">          
+ <input type="text" class="form-control" placeholder="Enter lastname" name="Last_name" value="<?php $Last_name; ?>" required>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="date">Password:</label>
+      <div class="col-sm-10">          
+      <input type="password" class="form-control" placeholder="Enter password" name="Password" value="<?php $Password; ?>" required>
+      </div>
+    </div>
+
+
+    <div class="form-group">        
+      <div class="col-sm-offset-2 col-sm-10">
+        <button type="submit" class="btn btn-default">Submit</button>
+<!-- 	    <a href="user_interface.php" class="w3-btn w3-black">go back to user interface</a> -->
+	     
+	     
+</form>
+      </div>
+    </div>
+  </form>
+</div>
+
+
 	
 </body>
 

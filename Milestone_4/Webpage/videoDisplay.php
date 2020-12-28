@@ -61,7 +61,7 @@ if($conn->connect_error){
  
 
 $url = "https://www.youtube.com/embed/".$videoId;
-echo' <iframe width="420" height="315" src=' .$url. '> </iframe>';
+echo' <center><iframe width="840" height="630" src=' .$url. '> </iframe></center>';
 
 // check if the video liked by the user
 $check_like = "SELECT * FROM likes WHERE User_name = \"$name\" AND Video_id = \"$videoId\"";
@@ -78,13 +78,13 @@ if(count($result) > 0){
         echo "Action failed";
     }
 
-    echo("<form action=\"user_video/video_operation.php\" method=\"post\">
+    echo(" <center><form action=\"user_video/video_operation.php\" method=\"post\">
             <input type=\"text\" placeholder=\"Enter Comment...\" name=\"comment\"> 
             <input type =\"hidden\", name=\"action\", value= \"comment\">
             <input type =\"hidden\", name=\"video_id\", value= \"$videoId\">
             <input type =\"hidden\", name=\"name\", value= \"$name\">
             <button type=\"submit\">comment</button>\n
-        </form>");
+        </form> </center>");
 
 }
 
@@ -94,7 +94,7 @@ $conn->close();?>
 
  <form action="user_interface.php" id="goto_Demo" method="post">
         <input type ="hidden", name="name", value= <?php echo $name?>>
-        <button type="submit">Click Me!</button>
+         <center><button type="submit">go back</button> </center>
 </form>
  <div include-html="./styles/footer.html"></div>
 

@@ -75,8 +75,12 @@ mysqli_close($conn);
 </html>
  -->
 	
+<<<<<<< HEAD
 
 <div include-html="./styles/footer.html"></div>
+=======
+<!-- <div include-html="./styles/footer.html"></div> -->
+>>>>>>> f901219575a2ddeb39a7565e1ccef96e24ee31fc
 
  <script>
   includeHTML();
